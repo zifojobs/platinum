@@ -169,8 +169,8 @@
     });
   });
 
-  /* -------- Parallax hero (subtle) -------- */
-  const heroBg = document.querySelector(".hero-bg, .page-hero-bg");
+  /* -------- Parallax hero (subtle) — only for image backgrounds, not video -------- */
+  const heroBg = document.querySelector(".page-hero-bg, .hero:not(:has(.hero-video)) .hero-bg");
   if (heroBg) {
     window.addEventListener("scroll", () => {
       const y = window.scrollY;

@@ -4,3 +4,5 @@ Thumbs.db
 *.log
 node_modules/
 .vscode/
+_tmp_docx/
+retour_client.docx

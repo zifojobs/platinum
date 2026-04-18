@@ -34,12 +34,26 @@
     else header.appendChild(bottom);
   }
 
-  // ---- Overlay social row ----
+  // ---- Overlay social row + close button ----
   const overlay = document.querySelector(".nav-overlay");
-  if (overlay && !overlay.querySelector(".nav-overlay-social")) {
-    const row = document.createElement("div");
-    row.className = "nav-overlay-social";
-    row.innerHTML = socialHTML;
-    overlay.appendChild(row);
+  if (overlay) {
+    if (!overlay.querySelector(".nav-overlay-close")) {
+      const close = document.createElement("button");
+      close.className = "nav-overlay-close";
+      close.setAttribute("aria-label", "Close menu");
+      close.addEventListener("click", () => {
+        overlay.classList.remove("open");
+        const burger = document.querySelector(".burger");
+        if (burger) burger.classList.remove("open");
+        document.body.style.overflow = "";
+      });
+      overlay.appendChild(close);
+    }
+    if (!overlay.querySelector(".nav-overlay-social")) {
+      const row = document.createElement("div");
+      row.className = "nav-overlay-social";
+      row.innerHTML = socialHTML;
+      overlay.appendChild(row);
+    }
   }
 })();
