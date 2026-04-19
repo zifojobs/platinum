@@ -702,6 +702,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 .text-center { text-align: center; }
 .bg-dark { background: var(--color-bg); color: #fff; }
 .bg-light { background: var(--color-light); color: var(--color-text-dark); }
+.bg-light-alt { background: var(--color-light-alt); color: var(--color-text-dark); padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 
 .divider { width: 60px; height: 2px; background: var(--color-accent); margin: 24px 0; }
 .divider.center { margin-left: auto; margin-right: auto; }
@@ -750,7 +751,15 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
    MOBILE — center text/buttons/images (client feedback)
    ========================================================= */
 @media (max-width: 768px) {
-  .hero { padding-bottom: 80px; align-items: center; text-align: center; }
+  /* Hero on mobile: full-screen video background with text overlaid (same layout as desktop) */
+  .hero { min-height: calc(100vh - 68px); padding: 40px 0 60px; align-items: flex-end; text-align: center; }
+  .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero-title { font-size: clamp(2.4rem, 9vw, 3.4rem); margin-bottom: 24px; }
+  .hero-tag { font-size: 0.95rem; margin: 0 auto 6px; }
+  .hero-content .eyebrow { justify-content: center; }
+  .hero-content { padding-bottom: 80px; }
+  .hero-scroll { bottom: 12px; font-size: 0.65rem; gap: 6px; }
+  .hero-scroll::after { height: 20px; }
   .hero-content, .page-hero-content { text-align: center; }
   .hero-title, .page-hero h1 { margin-left: auto; margin-right: auto; }
   .hero-meta { flex-direction: column; gap: 26px; align-items: center; }
