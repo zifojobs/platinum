@@ -9,7 +9,9 @@
   if (heroVideo) {
     const content = document.querySelector(".hero .hero-content");
     const scroll = document.querySelector(".hero .hero-scroll");
+    const overlay = document.querySelector(".hero .hero-overlay");
     const reveal = () => {
+      if (overlay) overlay.classList.add("is-visible");
       if (content) content.classList.remove("hero-content-hidden");
       if (scroll) scroll.classList.remove("hero-scroll-hidden");
     };
