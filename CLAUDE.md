@@ -81,9 +81,14 @@ Context file for AI assistants working on this repo. Update this as the project 
 - Mobile hero display — now full-screen video background with text overlay (same as desktop intent), scroll indicator below buttons inside viewport
 - All body sections across the site → white / ivory (about Philosophy, services Process)
 
-### Round 3 — current
+### Round 3
 
 - **Sidebar also white** — sidebar switched to `--color-light-alt` (#f7f5f1 ivory). Chose a tinted near-white rather than pure white so the dark logo rectangle reads acceptably; nav text, CTA, social icons, tagline all flipped to dark.
+
+### Round 4 — current
+
+- **Bigger desktop logo** — `.logo img` height bumped from 56px → 78px for stronger presence in the sidebar.
+- **Favicon** — `logo.png` wired as `<link rel="icon" type="image/png" href="logo.png" />` on all 7 HTML pages so the browser tab shows the brand mark.
 
 ## Pending from client
 
