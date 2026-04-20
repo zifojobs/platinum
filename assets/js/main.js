@@ -7,6 +7,17 @@
   /* -------- Hero video: reveal content on end, freeze last frame -------- */
   const heroVideo = document.querySelector(".hero .hero-video");
   if (heroVideo) {
+    // Pick mobile or desktop source before loading, based on viewport width.
+    const desktopSrc = heroVideo.getAttribute("data-src-desktop");
+    const mobileSrc = heroVideo.getAttribute("data-src-mobile");
+    if (desktopSrc && mobileSrc) {
+      const src = window.matchMedia("(max-width: 768px)").matches ? mobileSrc : desktopSrc;
+      const source = document.createElement("source");
+      source.src = src;
+      source.type = "video/mp4";
+      heroVideo.appendChild(source);
+      heroVideo.load();
+    }
     const content = document.querySelector(".hero .hero-content");
     const scroll = document.querySelector(".hero .hero-scroll");
     const overlay = document.querySelector(".hero .hero-overlay");
