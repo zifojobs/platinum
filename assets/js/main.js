@@ -4,6 +4,33 @@
 (function () {
   "use strict";
 
+  /* -------- Hero video: reveal content on end, freeze last frame -------- */
+  const heroVideo = document.querySelector(".hero .hero-video");
+  if (heroVideo) {
+    const content = document.querySelector(".hero .hero-content");
+    const scroll = document.querySelector(".hero .hero-scroll");
+    const reveal = () => {
+      if (content) content.classList.remove("hero-content-hidden");
+      if (scroll) scroll.classList.remove("hero-scroll-hidden");
+    };
+    heroVideo.addEventListener("ended", () => {
+      // Freeze on last frame: pause slightly before the absolute end so the
+      // final painted frame remains visible (avoids black flash on some browsers).
+      try {
+        if (heroVideo.duration && isFinite(heroVideo.duration)) {
+          heroVideo.currentTime = Math.max(0, heroVideo.duration - 0.05);
+        }
+      } catch (e) {}
+      heroVideo.pause();
+      reveal();
+    });
+    // Safety net: if the video fails to load/play, reveal after a delay.
+    heroVideo.addEventListener("error", reveal);
+    setTimeout(() => {
+      if (heroVideo.readyState < 2) reveal();
+    }, 8000);
+  }
+
   /* -------- Header scroll state -------- */
   const header = document.querySelector(".site-header");
   if (header) {

@@ -85,10 +85,16 @@ Context file for AI assistants working on this repo. Update this as the project 
 
 - **Sidebar also white** — sidebar switched to `--color-light-alt` (#f7f5f1 ivory). Chose a tinted near-white rather than pure white so the dark logo rectangle reads acceptably; nav text, CTA, social icons, tagline all flipped to dark.
 
-### Round 4 — current
+### Round 4
 
-- **Bigger desktop logo** — `.logo img` height bumped from 56px → 78px for stronger presence in the sidebar.
+- **Logo size** — Reverted to 56px (Round 4 bump to 78px rolled back per client).
 - **Favicon** — `logo.png` wired as `<link rel="icon" type="image/png" href="logo.png" />` on all 7 HTML pages so the browser tab shows the brand mark.
+
+### Round 5 — current
+
+- **New hero video** — `Video.mp4` replaced by `Hero_Video_Platinum.mp4` in `index.html`.
+- **Cinematic hero intro** — Hero video now plays once (no `loop`). Text content + scroll indicator start hidden (`.hero-content-hidden`, `.hero-scroll-hidden`) and fade in smoothly when the video fires `ended`. The video is then paused ~0.05s before its end so the last frame stays painted as the static background behind the titles. Safety net reveals content after 8s if the video fails to load.
+- **Bottom gradient preserved** — `.hero::after` black→transparent gradient kept.
 
 ## Pending from client
 
