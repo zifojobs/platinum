@@ -34,6 +34,21 @@
     else header.appendChild(bottom);
   }
 
+  // ---- Sticky scroll-reveal wrapper for the footer ----
+  const footer = document.querySelector(".site-footer");
+  if (footer && !footer.closest(".footer-reveal")) {
+    const reveal = document.createElement("div");
+    reveal.className = "footer-reveal";
+    const spacer = document.createElement("div");
+    spacer.className = "footer-reveal-spacer";
+    const sticky = document.createElement("div");
+    sticky.className = "footer-reveal-sticky";
+    footer.parentNode.insertBefore(reveal, footer);
+    reveal.appendChild(spacer);
+    spacer.appendChild(sticky);
+    sticky.appendChild(footer);
+  }
+
   // ---- Overlay social row + close button ----
   const overlay = document.querySelector(".nav-overlay");
   if (overlay) {

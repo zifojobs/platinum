@@ -624,6 +624,67 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 /* =========================================================
    FOOTER
    ========================================================= */
+/* Sticky scroll-reveal wrapper: page content slides up off the footer as you scroll */
+.footer-reveal {
+  position: relative;
+  height: 70vh;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.footer-reveal-spacer {
+  position: relative;
+  height: calc(100vh + 70vh);
+  top: -100vh;
+}
+.footer-reveal-sticky {
+  position: sticky;
+  top: calc(100vh - 70vh);
+  height: 70vh;
+  overflow: hidden;
+}
+.footer-reveal .site-footer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.footer-reveal .site-footer > .container { width: 100%; }
+/* Subtle animated background glows behind footer content */
+.footer-reveal .site-footer::before,
+.footer-reveal .site-footer::after {
+  content: "";
+  position: absolute;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  opacity: 0.35;
+}
+.footer-reveal .site-footer::before {
+  top: -120px; right: -120px;
+  background: radial-gradient(circle, rgba(184,147,90,0.45), transparent 70%);
+  animation: footer-glow-a 6s ease-in-out infinite;
+}
+.footer-reveal .site-footer::after {
+  bottom: -140px; left: -140px;
+  background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+  animation: footer-glow-b 7s ease-in-out infinite;
+}
+@keyframes footer-glow-a {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50%      { transform: scale(1.15); opacity: 0.55; }
+}
+@keyframes footer-glow-b {
+  0%, 100% { transform: scale(1); opacity: 0.25; }
+  50%      { transform: scale(1.2); opacity: 0.5; }
+}
+@media (max-width: 1024px) {
+  .footer-reveal { height: auto; clip-path: none; }
+  .footer-reveal-spacer { height: auto; top: 0; }
+  .footer-reveal-sticky { position: static; height: auto; top: auto; overflow: visible; }
+  .footer-reveal .site-footer { height: auto; display: block; }
+}
+
 .site-footer { background: #0a0a0a; color: #fff; padding: 80px 0 30px; }
 .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 50px; padding-bottom: 60px; border-bottom: 1px solid var(--color-border-dark); }
 .footer-col h4 { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 24px; font-weight: 500; }
