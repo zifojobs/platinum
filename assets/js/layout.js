@@ -34,6 +34,12 @@
     else header.appendChild(bottom);
   }
 
+  // ---- Open footer social links in a new tab ----
+  document.querySelectorAll(".footer-social a").forEach(a => {
+    a.setAttribute("target", "_blank");
+    a.setAttribute("rel", "noopener noreferrer");
+  });
+
   // ---- Sticky scroll-reveal wrapper for the footer ----
   const footer = document.querySelector(".site-footer");
   if (footer && !footer.closest(".footer-reveal")) {
