@@ -786,6 +786,18 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   object-fit: cover;
   z-index: 0;
 }
+/* Mobile hero: static image instead of video (≤768px) */
+.hero-image-mobile {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  display: none;
+}
+@media (max-width: 768px) {
+  .hero .hero-video { display: none; }
+  .hero .hero-image-mobile { display: block; }
+}
 /* Text-reveal overlay: appears with the hero titles. Darkens the whole frame
    EXCEPT a soft transparent window over the Platinum logo at the bottom of
    the last video frame, so the logo keeps breathing through. */

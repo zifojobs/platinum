@@ -7,17 +7,6 @@
   /* -------- Hero video: reveal content on end, freeze last frame -------- */
   const heroVideo = document.querySelector(".hero .hero-video");
   if (heroVideo) {
-    // Pick mobile or desktop source before loading, based on viewport width.
-    const desktopSrc = heroVideo.getAttribute("data-src-desktop");
-    const mobileSrc = heroVideo.getAttribute("data-src-mobile");
-    if (desktopSrc && mobileSrc) {
-      const src = window.matchMedia("(max-width: 768px)").matches ? mobileSrc : desktopSrc;
-      const source = document.createElement("source");
-      source.src = src;
-      source.type = "video/mp4";
-      heroVideo.appendChild(source);
-      heroVideo.load();
-    }
     const content = document.querySelector(".hero .hero-content");
     const scroll = document.querySelector(".hero .hero-scroll");
     const overlay = document.querySelector(".hero .hero-overlay");
@@ -26,22 +15,40 @@
       if (content) content.classList.remove("hero-content-hidden");
       if (scroll) scroll.classList.remove("hero-scroll-hidden");
     };
-    heroVideo.addEventListener("ended", () => {
-      // Freeze on last frame: pause slightly before the absolute end so the
-      // final painted frame remains visible (avoids black flash on some browsers).
-      try {
-        if (heroVideo.duration && isFinite(heroVideo.duration)) {
-          heroVideo.currentTime = Math.max(0, heroVideo.duration - 0.05);
-        }
-      } catch (e) {}
-      heroVideo.pause();
-      reveal();
-    });
-    // Safety net: if the video fails to load/play, reveal after a delay.
-    heroVideo.addEventListener("error", reveal);
-    setTimeout(() => {
-      if (heroVideo.readyState < 2) reveal();
-    }, 8000);
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (isMobile) {
+      // Mobile: no video, just the static background image. Reveal text after
+      // a short delay so it feels intentional and cinematic.
+      heroVideo.remove();
+      setTimeout(reveal, 900);
+    } else {
+      // Desktop: load the assembled hero video and reveal text when it ends.
+      const desktopSrc = heroVideo.getAttribute("data-src-desktop");
+      if (desktopSrc) {
+        const source = document.createElement("source");
+        source.src = desktopSrc;
+        source.type = "video/mp4";
+        heroVideo.appendChild(source);
+        heroVideo.load();
+      }
+      heroVideo.addEventListener("ended", () => {
+        // Freeze on last frame: pause slightly before the absolute end so the
+        // final painted frame remains visible (avoids black flash on some browsers).
+        try {
+          if (heroVideo.duration && isFinite(heroVideo.duration)) {
+            heroVideo.currentTime = Math.max(0, heroVideo.duration - 0.05);
+          }
+        } catch (e) {}
+        heroVideo.pause();
+        reveal();
+      });
+      // Safety net: if the video fails to load/play, reveal after a delay.
+      heroVideo.addEventListener("error", reveal);
+      setTimeout(() => {
+        if (heroVideo.readyState < 2) reveal();
+      }, 8000);
+    }
   }
 
   /* -------- Header scroll state -------- */
