@@ -800,8 +800,10 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   /* Uniform dark overlay on mobile — flat black with transparency to keep the
      titles readable. No logo cutout since the static image has no logo. */
   .hero .hero-overlay {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
   }
+  /* Disable the bottom fade on mobile so the overlay stays perfectly uniform */
+  .hero::after { display: none; }
 }
 /* Text-reveal overlay: appears with the hero titles. Darkens the whole frame
    EXCEPT a soft transparent window over the Platinum logo at the bottom of
