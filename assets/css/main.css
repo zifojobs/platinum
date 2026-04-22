@@ -797,10 +797,10 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 @media (max-width: 768px) {
   .hero .hero-video { display: none; }
   .hero .hero-image-mobile { display: block; }
-  /* Uniform dark overlay on mobile — no logo cutout since the static image
-     has no bottom-right logo to preserve. */
+  /* Uniform dark overlay on mobile — flat black with transparency to keep the
+     titles readable. No logo cutout since the static image has no logo. */
   .hero .hero-overlay {
-    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 100%);
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 /* Text-reveal overlay: appears with the hero titles. Darkens the whole frame
