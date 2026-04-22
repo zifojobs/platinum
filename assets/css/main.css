@@ -797,13 +797,6 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 @media (max-width: 768px) {
   .hero .hero-video { display: none; }
   .hero .hero-image-mobile { display: block; }
-  /* Uniform dark overlay on mobile — flat black with transparency to keep the
-     titles readable. No logo cutout since the static image has no logo. */
-  .hero .hero-overlay {
-    background: rgba(0, 0, 0, 0.55);
-  }
-  /* Disable the bottom fade on mobile so the overlay stays perfectly uniform */
-  .hero::after { display: none; }
 }
 /* Text-reveal overlay: appears with the hero titles. Darkens the whole frame
    EXCEPT a soft transparent window over the Platinum logo at the bottom of
@@ -828,6 +821,15 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   background: linear-gradient(180deg, rgba(14,14,14,0) 0%, rgba(14,14,14,0.35) 60%, rgba(14,14,14,0.9) 100%);
   pointer-events: none;
   z-index: 1;
+}
+
+/* Mobile hero overlay override — MUST come after the default .hero .hero-overlay
+   and .hero::after definitions so the background and display properties win. */
+@media (max-width: 768px) {
+  .hero .hero-overlay {
+    background: rgba(0, 0, 0, 0.55);
+  }
+  .hero::after { display: none; }
 }
 
 /* =========================================================
