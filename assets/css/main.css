@@ -801,8 +801,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 /* Text-reveal overlay: appears with the hero titles. Darkens the whole frame
    EXCEPT a soft transparent window over the Platinum logo at the bottom of
    the last video frame, so the logo keeps breathing through. */
-.hero-video + .hero-overlay,
-.hero-bg + .hero-overlay {
+.hero .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
   background:
     radial-gradient(ellipse 38% 24% at 80% 92%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.6) 100%),
