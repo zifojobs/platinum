@@ -30,20 +30,20 @@ window.PROJECTS = [
    tour: Matterport URL — "#" = pending client. */
 window.TOURS = [
   { brand: "Sola Salons", title: "Sola Salons", location: "Calgary, AB", category: "salon", cover: "projects/Sola Salon -1900 W 18th St. Houston, TX, USA/image_0.jpg", tour: "https://my.matterport.com/show/?m=ZkpKZxawnHd" },
-  { brand: "Starbucks", title: "Starbucks", location: "Mississauga, ON", category: "coffee", tour: "#" },
-  { brand: "Starbucks", title: "Starbucks", location: "Bramalea City Centre", category: "coffee", tour: "#" },
-  { brand: "Firehouse Subs", title: "Firehouse Subs", location: "Hamilton, ON", category: "restaurant", cover: "projects/Firehouse Subs - 608 Santa Maria Blvd. Milton, ON/image_0.jpg", tour: "#" },
-  { brand: "Sola Salons", title: "Sola Salons", location: "East York, ON", category: "salon", cover: "projects/Sola Salon -1900 W 18th St. Houston, TX, USA/image_1.jpg", tour: "#" },
-  { brand: "Starbucks Reserve", title: "Starbucks Reserve", location: "Cadillac Fairview Don Mills", category: "coffee", tour: "#" },
-  { brand: "Fionn MacCool's", title: "Fionn MacCool's Restaurant & Bar", location: "Bowmanville, ON", category: "restaurant", tour: "#" },
-  { brand: "Starbucks", title: "Starbucks", location: "Erin Mills Town Centre", category: "coffee", tour: "#" },
-  { brand: "Montana's BBQ & Bar", title: "Montana's BBQ & Bar", location: "Bowmanville, ON", category: "restaurant", tour: "#" },
-  { brand: "Firehouse Subs", title: "Firehouse Subs", location: "Gwillimbury · Peterborough · Kitchener · London", category: "restaurant", tour: "#" },
-  { brand: "KFC", title: "KFC", location: "Keswick, ON", category: "restaurant", tour: "#" },
-  { brand: "The Bier Markt", title: "The Bier Markt", location: "Toronto, ON", category: "restaurant", tour: "#" },
-  { brand: "Noodles & Company", title: "Noodles & Company", location: "Pickering · Toronto", category: "restaurant", cover: "projects/Noodles & Company - Pickering, ON/image_0.jpg", tour: "#" },
-  { brand: "Panera Bread", title: "Panera Bread", location: "Aurora, ON", category: "restaurant", tour: "#" },
-  { brand: "Planet Fitness", title: "Planet Fitness", location: "Scarborough, ON", category: "wellness", tour: "#" }
+  { brand: "Starbucks", title: "Starbucks", location: "Mississauga, ON", category: "coffee", tour: "https://www.digitalproperties.ca/20180534/" },
+  { brand: "Starbucks", title: "Starbucks", location: "Bramalea City Centre", category: "coffee", tour: "https://www.digitalproperties.ca/20180410/" },
+  { brand: "Firehouse Subs", title: "Firehouse Subs", location: "Hamilton, ON", category: "restaurant", cover: "projects/Firehouse Subs - 608 Santa Maria Blvd. Milton, ON/image_0.jpg", tour: "https://www.digitalproperties.ca/20180336/" },
+  { brand: "Sola Salons", title: "Sola Salons", location: "East York, ON", category: "salon", cover: "projects/Sola Salon -1900 W 18th St. Houston, TX, USA/image_1.jpg", tour: "https://www.digitalproperties.ca/20180315/" },
+  { brand: "Starbucks Reserve", title: "Starbucks Reserve", location: "Cadillac Fairview Don Mills", category: "coffee", tour: "https://www.digitalproperties.ca/20180210/" },
+  { brand: "Fionn MacCool's", title: "Fionn MacCool's Restaurant & Bar", location: "Bowmanville, ON", category: "restaurant", tour: "https://www.digitalproperties.ca/20180127/" },
+  { brand: "Starbucks", title: "Starbucks", location: "Erin Mills Town Centre", category: "coffee", tour: "https://www.digitalproperties.ca/20171119/" },
+  { brand: "Montana's BBQ & Bar", title: "Montana's BBQ & Bar", location: "Bowmanville, ON", category: "restaurant", tour: "https://www.digitalproperties.ca/20171211/" },
+  { brand: "Firehouse Subs", title: "Firehouse Subs", location: "Gwillimbury · Peterborough · Kitchener · London", category: "restaurant", tour: "https://www.digitalproperties.ca/20170926/" },
+  { brand: "KFC", title: "KFC", location: "Keswick, ON", category: "restaurant", tour: "https://www.digitalproperties.ca/20170729/" },
+  { brand: "The Bier Markt", title: "The Bier Markt", location: "Toronto, ON", category: "restaurant", tour: "https://www.digitalproperties.ca/20170719/" },
+  { brand: "Noodles & Company", title: "Noodles & Company", location: "Pickering · Toronto", category: "restaurant", cover: "projects/Noodles & Company - Pickering, ON/image_0.jpg", tour: "https://www.digitalproperties.ca/20160216/" },
+  { brand: "Panera Bread", title: "Panera Bread", location: "Aurora, ON", category: "restaurant", tour: "https://www.digitalproperties.ca/20160318/" },
+  { brand: "Planet Fitness", title: "Planet Fitness", location: "Scarborough, ON", category: "wellness", tour: "https://www.digitalproperties.ca/20160412/" }
 ];
 
 window.CATEGORY_LABELS = {
