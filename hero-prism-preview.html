@@ -18,8 +18,8 @@
       --face-w: 520px;
       --face-h: 293px;
       /* Inscribed radius for 7 faces ≈ w * 1.038 = ~540px.
-         We push beyond it (1.55x) to add visible space between faces. */
-      --face-tz: 820px;
+         Slightly past it (1.18x) for a tight but visible gap. */
+      --face-tz: 640px;
       --rot-dur: 32s;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,14 +49,29 @@
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1.05fr 1fr;
+      grid-template-columns: 1fr 1.15fr;
       align-items: center;
       gap: 40px;
       padding: 100px 80px 60px;
       position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: var(--color-bg);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url("projects/New Plaza Development - 171 George Reynolds Dr. Courtice, ON/image_0.jpg");
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+      filter: grayscale(15%) contrast(1.05);
+    }
+    .hero-bg::after {
+      content: "";
+      position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 80% 50%, rgba(184,147,90,0.08), transparent 60%),
-        var(--color-bg);
+        linear-gradient(90deg, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.78) 45%, rgba(8,8,8,0.55) 100%),
+        radial-gradient(ellipse at 80% 50%, rgba(184,147,90,0.10), transparent 60%);
     }
 
     .hero-text { max-width: 620px; }
@@ -120,6 +135,8 @@
       height: 520px;
       perspective: 2200px;
       perspective-origin: 50% 50%;
+      /* Push the prism toward the right edge of the viewport */
+      transform: translateX(15%);
     }
     .prism {
       position: absolute;
@@ -199,13 +216,13 @@
     /* Tablet */
     @media (max-width: 1100px) {
       .hero { grid-template-columns: 1fr; padding: 100px 40px 40px; }
-      .prism-stage { height: 440px; }
-      :root { --face-w: 420px; --face-h: 236px; --face-tz: 660px; }
+      .prism-stage { height: 440px; transform: none; }
+      :root { --face-w: 420px; --face-h: 236px; --face-tz: 520px; }
     }
     @media (max-width: 600px) {
       .hero { padding: 90px 24px 24px; gap: 20px; }
       .prism-stage { height: 340px; }
-      :root { --face-w: 280px; --face-h: 158px; --face-tz: 440px; }
+      :root { --face-w: 280px; --face-h: 158px; --face-tz: 345px; }
       .hero-title { font-size: 2.6rem; }
     }
   </style>
@@ -218,6 +235,7 @@
 </div>
 
 <section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-text">
     <span class="eyebrow">Since 1997 — Ontario, Canada</span>
     <h1 class="hero-title">Building <em>excellence</em><br/>beyond structures.</h1>
