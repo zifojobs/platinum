@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SEO Strategy — Platinum Construction Corporation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #b8935a;
+      --gold-soft: #d4ae74;
+      --dark: #0e0e0e;
+      --ink: #1a1a1a;
+      --muted: #5a5a5a;
+      --line: #e6e2da;
+      --ivory: #f7f5f1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: A4; margin: 0; }
+
+    html, body { background: #fff; color: var(--ink); }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    h1, h2, h3, h4, .display, .eyebrow {
+      font-family: "Oswald", "Arial Narrow", sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 22mm 20mm;
+      page-break-after: always;
+      position: relative;
+      background: #fff;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    /* ======= COVER ======= */
+    .cover {
+      background: var(--dark);
+      color: #fff;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cover-inner { padding: 28mm 22mm; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .cover-top .eyebrow {
+      color: var(--gold);
+      font-size: 9.5pt;
+      letter-spacing: 0.32em;
+    }
+    .cover-top .brand {
+      font-family: "Oswald", sans-serif;
+      font-weight: 300;
+      font-size: 14pt;
+      letter-spacing: 0.18em;
+      margin-top: 6mm;
+      color: rgba(255,255,255,0.82);
+    }
+    .cover-mid h1 {
+      font-size: 60pt;
+      line-height: 0.95;
+      font-weight: 400;
+      letter-spacing: -0.005em;
+      margin-top: 18mm;
+    }
+    .cover-mid h1 em {
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 300;
+    }
+    .cover-mid .subtitle {
+      font-family: "Inter", sans-serif;
+      font-size: 12pt;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.72);
+      max-width: 130mm;
+      margin-top: 10mm;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .cover-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20mm;
+      border-top: 1px solid rgba(184,147,90,0.4);
+      padding-top: 8mm;
+      font-family: "Oswald", sans-serif;
+      font-size: 9pt;
+      letter-spacing: 0.22em;
+      color: rgba(255,255,255,0.6);
+    }
+    .cover-bottom .meta strong {
+      display: block;
+      color: var(--gold);
+      font-weight: 400;
+      margin-bottom: 2mm;
+    }
+
+    /* ======= GENERIC PAGE ======= */
+    .pg-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 6mm;
+      margin-bottom: 12mm;
+    }
+    .pg-header .section-num {
+      font-family: "Oswald", sans-serif;
+      color: var(--gold);
+      font-size: 9pt;
+      letter-spacing: 0.32em;
+    }
+    .pg-header .pg-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 30pt;
+      font-weight: 400;
+      line-height: 1;
+      margin-top: 4mm;
+      letter-spacing: -0.005em;
+    }
+    .pg-header .pg-meta {
+      font-family: "Oswald", sans-serif;
+      font-size: 8.5pt;
+      letter-spacing: 0.28em;
+      color: var(--muted);
+    }
+
+    .pg-footer {
+      position: absolute;
+      bottom: 12mm;
+      left: 20mm;
+      right: 20mm;
+      display: flex;
+      justify-content: space-between;
+      font-family: "Oswald", sans-serif;
+      font-size: 7.5pt;
+      letter-spacing: 0.28em;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 4mm;
+    }
+
+    /* ======= TYPOGRAPHY ======= */
+    h2.section-h {
+      font-size: 14pt;
+      margin-top: 9mm;
+      margin-bottom: 4mm;
+      color: var(--ink);
+    }
+    h2.section-h .num {
+      color: var(--gold);
+      font-weight: 400;
+      margin-right: 6mm;
+    }
+    h3.sub-h {
+      font-size: 10.5pt;
+      letter-spacing: 0.1em;
+      margin-top: 6mm;
+      margin-bottom: 2.5mm;
+      color: var(--ink);
+    }
+    p { margin-bottom: 3mm; }
+    p.lead {
+      font-size: 11.5pt;
+      line-height: 1.6;
+      color: var(--ink);
+      margin-bottom: 6mm;
+    }
+    .muted { color: var(--muted); }
+
+    ul, ol { padding-left: 5mm; margin-bottom: 4mm; }
+    li { margin-bottom: 1.5mm; }
+    li::marker { color: var(--gold); }
+
+    /* ======= COMPONENTS ======= */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
+
+    .card {
+      border: 1px solid var(--line);
+      padding: 6mm;
+      border-radius: 2mm;
+      background: #fff;
+      page-break-inside: avoid;
+    }
+    .card.dark {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+    .card.gold {
+      background: var(--ivory);
+      border-color: var(--line);
+      border-left: 3px solid var(--gold);
+    }
+    .card .card-num {
+      font-family: "Oswald", sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+    }
+    .card.dark .card-num { color: var(--gold-soft); }
+    .card h4 {
+      font-size: 11pt;
+      margin: 2mm 0 3mm;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+    .card p { font-size: 9.5pt; line-height: 1.5; }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4mm;
+      margin: 4mm 0 6mm;
+    }
+    .stat {
+      border-top: 2px solid var(--gold);
+      padding-top: 3mm;
+    }
+    .stat strong {
+      font-family: "Oswald", sans-serif;
+      font-weight: 400;
+      font-size: 22pt;
+      display: block;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .stat span {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: 7.5pt;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.5pt;
+      margin: 3mm 0 5mm;
+    }
+    th, td {
+      text-align: left;
+      padding: 3mm 4mm;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th {
+      font-family: "Oswald", sans-serif;
+      text-transform: uppercase;
+      font-size: 8pt;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      font-weight: 500;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .pill {
+      display: inline-block;
+      font-family: "Oswald", sans-serif;
+      font-size: 7.5pt;
+      letter-spacing: 0.18em;
+      padding: 1.5mm 3mm;
+      border-radius: 99px;
+      background: var(--ivory);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .pill.gold { background: var(--gold); color: #fff; border-color: var(--gold); }
+    .pill.dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+    .timeline {
+      position: relative;
+      padding-left: 8mm;
+      margin: 5mm 0;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 2mm; top: 0; bottom: 0;
+      width: 1px;
+      background: var(--line);
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 6mm;
+      page-break-inside: avoid;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -7.5mm;
+      top: 1mm;
+      width: 3.5mm;
+      height: 3.5mm;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+    .timeline-item h4 {
+      font-size: 11pt;
+      margin-bottom: 1.5mm;
+    }
+    .timeline-item .time {
+      font-family: "Oswald", sans-serif;
+      font-size: 7.5pt;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      margin-bottom: 1.5mm;
+    }
+
+    .note {
+      background: var(--ivory);
+      border-left: 3px solid var(--gold);
+      padding: 5mm 6mm;
+      margin: 5mm 0;
+      font-size: 9.5pt;
+      page-break-inside: avoid;
+    }
+    .note strong { font-family: "Oswald", sans-serif; letter-spacing: 0.1em; color: var(--gold); }
+
+    /* "Before / After" code preview */
+    .code-block {
+      font-family: "Consolas", "Courier New", monospace;
+      font-size: 8.5pt;
+      line-height: 1.5;
+      background: #1c1c1c;
+      color: #e8e6e1;
+      padding: 4mm 5mm;
+      border-radius: 1.5mm;
+      margin: 2mm 0 4mm;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .code-block .tag { color: #b8935a; }
+    .code-block .attr { color: #d4ae74; }
+    .code-block .str { color: #c9d4a8; }
+    .code-block .com { color: #6a6a6a; font-style: italic; }
+    .code-block.added { border-left: 3px solid #6a8e3f; }
+    .code-block.removed { border-left: 3px solid #8e3f3f; opacity: 0.55; }
+
+    /* Final closing page */
+    .closing {
+      background: var(--dark);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0;
+    }
+    .closing-inner { padding: 30mm; }
+    .closing h1 {
+      font-size: 36pt;
+      font-weight: 300;
+      letter-spacing: -0.005em;
+      line-height: 1.05;
+    }
+    .closing h1 em { font-style: normal; color: var(--gold); }
+    .closing p {
+      color: rgba(255,255,255,0.72);
+      max-width: 130mm;
+      margin: 8mm auto 0;
+      font-size: 11pt;
+    }
+    .closing .signoff {
+      margin-top: 18mm;
+      font-family: "Oswald", sans-serif;
+      font-size: 8.5pt;
+      letter-spacing: 0.32em;
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="cover-top">
+      <div class="eyebrow">Digital Visibility Brief — Apr 2026</div>
+      <div class="brand">Platinum Construction Corporation</div>
+    </div>
+    <div class="cover-mid">
+      <h1>SEO<br/><em>Strategy.</em></h1>
+      <div class="subtitle">
+        A practical roadmap to make platinumconstruction.com discoverable
+        on Google for the searches that actually win commercial-construction
+        contracts in Ontario and beyond.
+      </div>
+    </div>
+    <div class="cover-bottom">
+      <div class="meta">
+        <strong>Prepared for</strong>
+        Platinum Construction
+      </div>
+      <div class="meta">
+        <strong>Scope</strong>
+        New website launch
+      </div>
+      <div class="meta">
+        <strong>Document</strong>
+        v1 — strategy
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 — WHY SEO ============ -->
+<section class="page">
+  <div class="pg-header">
+    <div>
+      <div class="section-num">01 — Context</div>
+      <div class="pg-title">Why SEO matters<br/>for Platinum.</div>
+    </div>
+    <div class="pg-meta">A — The Opportunity</div>
+  </div>
+
+  <p class="lead">
+    Today, when a developer, franchise group or hotel ownership team
+    in Ontario looks for a general contractor, their search starts
+    on Google — not in the Yellow Pages. Whether they win a project
+    or not depends largely on whether Platinum appears in the first
+    five results.
+  </p>
+
+  <div class="stat-row">
+    <div class="stat"><strong>92%</strong><span>Searches end on page 1</span></div>
+    <div class="stat"><strong>~46%</strong><span>Have local intent</span></div>
+    <div class="stat"><strong>3×</strong><span>Calls vs. paid alone</span></div>
+    <div class="stat"><strong>27 yrs</strong><span>Of brand to leverage</span></div>
+  </div>
+
+  <h2 class="section-h"><span class="num">A.1</span> The current site has the content but not the structure</h2>
+  <p>
+    The legacy site at platinumconstruction.com communicates the brand
+    well, but it was not built for search engines. There are no
+    structured-data signals, no Open Graph metadata, no XML sitemap
+    and no per-page descriptions tailored to keywords prospects
+    actually type. As a result, Google treats Platinum as a generic
+    page rather than as a 27-year-old commercial GC headquartered in
+    Vaughan.
+  </p>
+
+  <h2 class="section-h"><span class="num">A.2</span> The new site is the right moment to fix it</h2>
+  <p>
+    Rebuilding the site is a once-in-a-decade window to bake SEO into
+    the foundation. The cost of doing it now is marginal; the cost
+    of retrofitting it after launch is roughly 4× higher and risks
+    losing whatever ranking has accumulated.
+  </p>
+
+  <div class="note">
+    <strong>BOTTOM LINE</strong> &nbsp; Platinum has the credentials,
+    the brand and the portfolio. The strategy below makes Google see
+    that — and translate it into qualified inbound leads from
+    commercial developers, franchise teams and hotel ownership groups
+    across Ontario.
+  </div>
+
+  <div class="pg-footer">
+    <span>Platinum Construction · SEO Strategy</span>
+    <span>01 / 06</span>
+  </div>
+</section>
+
+<!-- ============ 02 — AUDIT ============ -->
+<section class="page">
+  <div class="pg-header">
+    <div>
+      <div class="section-num">02 — Audit</div>
+      <div class="pg-title">Where we stand<br/>today.</div>
+    </div>
+    <div class="pg-meta">B — Current State</div>
+  </div>
+
+  <p class="lead">
+    A snapshot of the legacy site against the SEO basics every
+    commercial website should have in 2026.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:38%">Element</th>
+        <th style="width:18%">Status</th>
+        <th>Impact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Per-page meta titles &amp; descriptions</td>
+        <td><span class="pill">Partial</span></td>
+        <td>Generic, not keyword-targeted</td>
+      </tr>
+      <tr>
+        <td>Open Graph &amp; Twitter cards</td>
+        <td><span class="pill dark">Missing</span></td>
+        <td>Bad previews on LinkedIn / WhatsApp / SMS</td>
+      </tr>
+      <tr>
+        <td>JSON-LD structured data (LocalBusiness)</td>
+        <td><span class="pill dark">Missing</span></td>
+        <td>No rich snippet, no Maps boost</td>
+      </tr>
+      <tr>
+        <td>XML sitemap &amp; robots.txt</td>
+        <td><span class="pill dark">Missing</span></td>
+        <td>Google must discover pages by guesswork</td>
+      </tr>
+      <tr>
+        <td>Image alt attributes</td>
+        <td><span class="pill">Partial</span></td>
+        <td>Image search invisible, accessibility low</td>
+      </tr>
+      <tr>
+        <td>Heading hierarchy (H1 / H2 / H3)</td>
+        <td><span class="pill gold">OK</span></td>
+        <td>Already clean on the new build</td>
+      </tr>
+      <tr>
+        <td>Mobile-friendliness</td>
+        <td><span class="pill gold">OK</span></td>
+        <td>Responsive design in place</td>
+      </tr>
+      <tr>
+        <td>Page speed (LCP / CLS)</td>
+        <td><span class="pill">Partial</span></td>
+        <td>Hero video weight to optimize</td>
+      </tr>
+      <tr>
+        <td>HTTPS &amp; canonical URLs</td>
+        <td><span class="pill gold">OK</span></td>
+        <td>Vercel handles HTTPS by default</td>
+      </tr>
+      <tr>
+        <td>Local SEO signals (Business Profile)</td>
+        <td><span class="pill dark">Not connected</span></td>
+        <td>Most direct miss for Vaughan / GTA leads</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <strong>VERDICT</strong> &nbsp; The new website inherits a clean
+    code base — but ships almost no SEO out of the box. Five focused
+    interventions, described next, change that.
+  </div>
+
+  <div class="pg-footer">
+    <span>Platinum Construction · SEO Strategy</span>
+    <span>02 / 06</span>
+  </div>
+</section>
+
+<!-- ============ 03 — THE 5 PILLARS ============ -->
+<section class="page">
+  <div class="pg-header">
+    <div>
+      <div class="section-num">03 — Strategy</div>
+      <div class="pg-title">The five pillars.</div>
+    </div>
+    <div class="pg-meta">C — What We'll Do</div>
+  </div>
+
+  <p class="lead">
+    Each pillar is a self-contained workstream. They compound: doing
+    all five together produces a stronger result than the sum of
+    parts.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-num">PILLAR 01</div>
+      <h4>On-page foundations</h4>
+      <p>
+        Unique, keyword-targeted title and description on every page.
+        Canonical URLs. Open Graph and Twitter Card metadata so links
+        shared on LinkedIn or WhatsApp render with the brand image
+        and headline rather than a blank rectangle.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-num">PILLAR 02</div>
+      <h4>Structured data (JSON-LD)</h4>
+      <p>
+        Schema.org markup that tells Google explicitly what Platinum
+        is: <em>LocalBusiness</em> in Vaughan, <em>GeneralContractor</em>,
+        with phone, address, hours, areas served. Unlocks rich
+        snippets and Google Maps visibility.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-num">PILLAR 03</div>
+      <h4>Crawlability</h4>
+      <p>
+        XML sitemap auto-generated and declared in <em>robots.txt</em>.
+        Internal linking pattern that funnels authority toward the
+        revenue pages (Services, Gallery, Contact). Submitted to
+        Google Search Console day one.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-num">PILLAR 04</div>
+      <h4>Local &amp; brand SEO</h4>
+      <p>
+        Connect &amp; optimize the Google Business Profile, align
+        NAP (name / address / phone) across web, GBP and citations.
+        Target high-intent local keywords: "commercial general
+        contractor Vaughan", "franchise build-out Ontario", etc.
+      </p>
+    </div>
+
+    <div class="card gold" style="grid-column: 1 / -1;">
+      <div class="card-num">PILLAR 05</div>
+      <h4>Performance &amp; Core Web Vitals</h4>
+      <p>
+        Compress and lazy-load the hero and project videos, defer
+        non-critical JS, preconnect to font CDNs. Targets:
+        <strong>LCP &lt; 2.5s</strong>, <strong>CLS &lt; 0.1</strong>,
+        <strong>INP &lt; 200ms</strong> on a mid-tier mobile over 4G —
+        the thresholds Google uses as a ranking signal.
+      </p>
+    </div>
+  </div>
+
+  <div class="pg-footer">
+    <span>Platinum Construction · SEO Strategy</span>
+    <span>03 / 06</span>
+  </div>
+</section>
+
+<!-- ============ 04 — WHAT IT LOOKS LIKE IN CODE ============ -->
+<section class="page">
+  <div class="pg-header">
+    <div>
+      <div class="section-num">04 — Tangible</div>
+      <div class="pg-title">What changes,<br/>concretely.</div>
+    </div>
+    <div class="pg-meta">D — Deliverables</div>
+  </div>
+
+  <p class="lead">
+    Two before / after examples to make the intervention concrete.
+    These changes are invisible to the visitor but strongly visible
+    to Google.
+  </p>
+
+  <h3 class="sub-h">Example 1 — The page header</h3>
+
+  <p class="muted" style="margin-bottom:2mm;">Before</p>
+  <div class="code-block removed"><span class="com">&lt;!-- index.html --&gt;</span>
+<span class="tag">&lt;title&gt;</span>Platinum Construction Corporation — Building Excellence Since 1997<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name=</span><span class="str">"description"</span> <span class="attr">content=</span><span class="str">"Platinum Construction Corporation — Commercial general contractor..."</span><span class="tag"> /&gt;</span></div>
+
+  <p class="muted" style="margin-bottom:2mm;">After</p>
+  <div class="code-block added"><span class="com">&lt;!-- index.html --&gt;</span>
+<span class="tag">&lt;title&gt;</span>Commercial General Contractor in Vaughan, ON | Platinum Construction<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">name=</span><span class="str">"description"</span> <span class="attr">content=</span><span class="str">"Platinum Construction is a Vaughan-based commercial general contractor delivering franchise rollouts, hotel turnkeys and design-build across Ontario since 1997."</span><span class="tag"> /&gt;</span>
+<span class="tag">&lt;link</span> <span class="attr">rel=</span><span class="str">"canonical"</span> <span class="attr">href=</span><span class="str">"https://platinumconstruction.com/"</span><span class="tag"> /&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property=</span><span class="str">"og:title"</span> <span class="attr">content=</span><span class="str">"Platinum Construction — Commercial GC Vaughan, ON"</span><span class="tag"> /&gt;</span>
+<span class="tag">&lt;meta</span> <span class="attr">property=</span><span class="str">"og:image"</span> <span class="attr">content=</span><span class="str">"https://platinumconstruction.com/og-cover.jpg"</span><span class="tag"> /&gt;</span></div>
+
+  <h3 class="sub-h">Example 2 — Telling Google "we are a real local business"</h3>
+
+  <div class="code-block added"><span class="tag">&lt;script</span> <span class="attr">type=</span><span class="str">"application/ld+json"</span><span class="tag">&gt;</span>
+{
+  <span class="str">"@context"</span>: <span class="str">"https://schema.org"</span>,
+  <span class="str">"@type"</span>: <span class="str">"GeneralContractor"</span>,
+  <span class="str">"name"</span>: <span class="str">"Platinum Construction Corporation"</span>,
+  <span class="str">"foundingDate"</span>: <span class="str">"1997"</span>,
+  <span class="str">"address"</span>: { <span class="str">"streetAddress"</span>: <span class="str">"83 Citation Dr. Unit 2"</span>,
+                <span class="str">"addressLocality"</span>: <span class="str">"Vaughan"</span>,
+                <span class="str">"addressRegion"</span>: <span class="str">"ON"</span>,
+                <span class="str">"postalCode"</span>: <span class="str">"L4K 2Z6"</span> },
+  <span class="str">"telephone"</span>: <span class="str">"+1-905-763-8119"</span>,
+  <span class="str">"areaServed"</span>: [ <span class="str">"Ontario"</span>, <span class="str">"Greater Toronto Area"</span> ],
+  <span class="str">"sameAs"</span>: [ <span class="str">"https://facebook.com/..."</span>, <span class="str">"https://linkedin.com/..."</span> ]
+}
+<span class="tag">&lt;/script&gt;</span></div>
+
+  <div class="note">
+    <strong>WHY IT MATTERS</strong> &nbsp; This single block is what
+    makes Platinum show up in Google Maps, in the "knowledge panel"
+    on the right side of brand searches, and as a result with phone
+    + hours + reviews instead of just a blue link.
+  </div>
+
+  <div class="pg-footer">
+    <span>Platinum Construction · SEO Strategy</span>
+    <span>04 / 06</span>
+  </div>
+</section>
+
+<!-- ============ 05 — TIMELINE ============ -->
+<section class="page">
+  <div class="pg-header">
+    <div>
+      <div class="section-num">05 — Plan</div>
+      <div class="pg-title">Timeline &amp;<br/>expected results.</div>
+    </div>
+    <div class="pg-meta">E — Roadmap</div>
+  </div>
+
+  <p class="lead">
+    The work is scoped to ship alongside the new website launch,
+    with a follow-up checkpoint at 90 days to measure traction.
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="time">PHASE 01 · WEEK 1</div>
+      <h4>On-page foundations &amp; structured data</h4>
+      <p class="muted">
+        Per-page titles, descriptions, canonicals, Open Graph
+        metadata, JSON-LD blocks. Sitemap.xml + robots.txt generated
+        and submitted to Google Search Console. Bing Webmaster Tools
+        registered in parallel.
+      </p>
+    </div>
+    <div class="timeline-item">
+      <div class="time">PHASE 02 · WEEK 2</div>
+      <h4>Performance &amp; image optimization</h4>
+      <p class="muted">
+        Hero and project videos re-encoded, lazy-loading rolled out
+        across the gallery, alt attributes written for every project
+        photo. Lighthouse audit pass: target 90+ on
+        Performance / SEO / Accessibility.
+      </p>
+    </div>
+    <div class="timeline-item">
+      <div class="time">PHASE 03 · WEEK 3–4</div>
+      <h4>Local SEO activation</h4>
+      <p class="muted">
+        Google Business Profile claimed, photos uploaded, services
+        and service areas configured. NAP citations checked across
+        Yelp, Yellow Pages, BBB. First three project case-studies
+        published as long-form pages with location keywords.
+      </p>
+    </div>
+    <div class="timeline-item">
+      <div class="time">PHASE 04 · DAY 90</div>
+      <h4>Measurement &amp; iteration</h4>
+      <p class="muted">
+        Search Console review: indexed pages, impressions, click-
+        through rate, top-ranking queries. Identify the keywords
+        showing momentum and double down with new content. Adjust
+        based on what real Ontario prospects are typing.
+      </p>
+    </div>
+  </div>
+
+  <h2 class="section-h"><span class="num">E.1</span> What success looks like at 90 days</h2>
+  <ul>
+    <li><strong>100%</strong> of pages indexed in Google Search Console (vs ~partial today)</li>
+    <li><strong>Brand search</strong> "Platinum Construction Vaughan" returns the new site #1, with the knowledge panel populated</li>
+    <li><strong>Google Maps</strong> listing live with photos, hours and direct contact</li>
+    <li><strong>Top-3 ranking</strong> on at least two long-tail commercial queries (e.g. "franchise build-out contractor Ontario")</li>
+    <li><strong>Lighthouse SEO score ≥ 95</strong> on every page</li>
+  </ul>
+
+  <div class="pg-footer">
+    <span>Platinum Construction · SEO Strategy</span>
+    <span>05 / 06</span>
+  </div>
+</section>
+
+<!-- ============ 06 — CLOSING ============ -->
+<section class="page closing">
+  <div class="closing-inner">
+    <h1>Build it<br/>once.<br/>Be found<br/><em>for years.</em></h1>
+    <p>
+      SEO is the only marketing channel that pays compounding
+      interest: every fix made today keeps generating qualified leads
+      next year. Let's make sure the new platinumconstruction.com is
+      worth the click — and that the right people find it.
+    </p>
+    <div class="signoff">— Prepared for Platinum Construction · 2026 —</div>
+  </div>
+</section>
+
+</body>
+</html>
