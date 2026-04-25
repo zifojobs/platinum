@@ -6,3 +6,7 @@ node_modules/
 .vscode/
 _tmp_docx/
 retour_client.docx
+
+# Internal-only freelancer docs (never push)
+quote.html
+Quote-*.pdf
