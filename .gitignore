@@ -10,3 +10,20 @@ retour_client.docx
 # Internal-only freelancer docs (never push)
 quote.html
 Quote-*.pdf
+
+# Internal audit PDFs (client SEO team materials — reference only)
+Website_Audit_for_platinum.pdf
+Pages_Found_for_*.pdf
+Pages Found for*.pdf
+
+# Legacy / scratch files at repo root
+/1.mp4
+/2.mp4
+/3.mp4
+/4.mp4
+/5.mp4
+/6.mp4
+/7.mp4
+/Hro.jpeg
+/Design sans titre/
+/Platinum/

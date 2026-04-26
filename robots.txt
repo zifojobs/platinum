@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /quote.html
+Disallow: /seo-strategy.html
+Disallow: /hero-prism-preview.html
+
+Sitemap: https://platinum-site.vercel.app/sitemap.xml

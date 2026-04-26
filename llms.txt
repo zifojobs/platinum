@@ -1,0 +1,34 @@
+# Platinum Construction Corporation
+
+> Commercial general contractor based in Vaughan, Ontario, Canada, delivering design-build, franchise rollouts, hospitality, retail, kitchens and custom residential projects across Canada and the United States since 1997.
+
+Platinum Construction Corporation has 27+ years of experience as a turnkey general contractor. The firm operates from offices in Ontario (Canada) and a US branch, serving national franchise brands and developers across North America.
+
+## Services
+
+- Commercial construction and renovations
+- Franchise and retail rollouts (Starbucks, Chipotle, Tim Hortons, Wendy's, KFC, A&W, Mr. Mikes, Panera Bread, Dairy Queen, Pur & Simple, Firehouse Subs, Noodles & Company)
+- Hospitality and restaurants
+- Salon studios (Sola Salon)
+- Custom residential and design-build
+- Project management
+- Environmental and sustainable construction
+
+## Pages
+
+- [Home](https://platinum-site.vercel.app/): Company overview, hero of recent builds, services teaser
+- [About](https://platinum-site.vercel.app/about): Company history, philosophy, leadership, 27-year track record
+- [Services](https://platinum-site.vercel.app/services): Detailed service offerings and the design-build process
+- [Gallery](https://platinum-site.vercel.app/gallery): Portfolio of completed projects with photos, filterable by category
+- [Virtual Tours](https://platinum-site.vercel.app/virtual-tours): 360° immersive tours of 15 completed builds
+- [Environmental Policy](https://platinum-site.vercel.app/environmental-policy): Commitments to sustainable, energy-efficient construction
+- [Contact](https://platinum-site.vercel.app/contact): Phone, email, Ontario office, US branch
+
+## Contact
+
+- Phone: +1 905 763 8119
+- Headquarters: Vaughan, Ontario, Canada
+- US branch: (see contact page)
+- LinkedIn: https://linkedin.com/company/platinum-construction-corporation
+- Instagram: https://instagram.com/platinum_construction_corp
+- X / Twitter: https://twitter.com/platinumconst1
