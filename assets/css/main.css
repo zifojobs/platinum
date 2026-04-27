@@ -883,3 +883,26 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   .stat-item { text-align: center; border-left: none !important; padding-left: 0 !important; }
   section { padding: 70px 0; }
 }
+
+/* ============ STACKED CA + US LOGOS ============ */
+.logo { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.logo .logo-ca { height: 56px; width: auto; display: block; }
+.logo .logo-us { height: 36px; width: auto; display: block; opacity: 0.9; }
+.logo .logo-divider { display: block; width: 32px; height: 1px; background: var(--color-border-light); margin: -2px 0; }
+
+@media (max-width: 1024px) {
+  .logo { flex-direction: row; align-items: center; gap: 10px; }
+  .logo .logo-ca { height: 40px; }
+  .logo .logo-us { height: 26px; }
+  .logo .logo-divider { width: 1px; height: 24px; margin: 0; }
+}
+
+.footer-logo { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; flex-wrap: wrap; }
+.footer-logo img { height: 54px; width: auto; margin: 0; display: block; }
+.footer-logo .footer-logo-us { height: 38px; opacity: 0.9; }
+.footer-logo .footer-logo-divider { display: block; width: 1px; height: 38px; background: rgba(255,255,255,0.2); }
+
+@media (max-width: 768px) {
+  .footer-logo { justify-content: center; }
+  .contact-offices { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
