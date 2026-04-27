@@ -51,6 +51,34 @@
     }
   }
 
+  /* -------- Cinematic intro overlay (homepage, once per session) -------- */
+  const introOverlay = document.getElementById("introOverlay");
+  if (introOverlay) {
+    if (sessionStorage.getItem("pcIntroSeen") === "1") {
+      introOverlay.remove();
+    } else {
+      introOverlay.classList.add("is-active");
+      document.body.classList.add("intro-active");
+      let dismissed = false;
+      const dismiss = () => {
+        if (dismissed) return;
+        dismissed = true;
+        sessionStorage.setItem("pcIntroSeen", "1");
+        introOverlay.classList.add("is-hidden");
+        document.body.classList.remove("intro-active");
+        setTimeout(() => introOverlay.remove(), 1000);
+      };
+      const skipBtn = document.getElementById("introSkip");
+      if (skipBtn) skipBtn.addEventListener("click", (e) => { e.stopPropagation(); dismiss(); });
+      introOverlay.addEventListener("click", dismiss);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" || e.key === "Enter") dismiss();
+      });
+      // Auto-dismiss safety net
+      setTimeout(dismiss, 5500);
+    }
+  }
+
   /* -------- Header scroll state -------- */
   const header = document.querySelector(".site-header");
   if (header) {
