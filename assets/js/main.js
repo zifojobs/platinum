@@ -47,8 +47,19 @@
       heroVideo.addEventListener("error", reveal);
       setTimeout(() => {
         if (heroVideo.readyState < 2) reveal();
-      }, 8000);
+      }, 60000);
     }
+  }
+
+  /* -------- Hero sound toggle + auto-unmute on user gesture -------- */
+  const soundBtn = document.getElementById("heroSound");
+  const setSoundState = (unmuted) => {
+    if (!heroVideo) return;
+    heroVideo.muted = !unmuted;
+    if (soundBtn) soundBtn.setAttribute("aria-pressed", String(unmuted));
+  };
+  if (soundBtn && heroVideo) {
+    soundBtn.addEventListener("click", () => setSoundState(heroVideo.muted));
   }
 
   /* -------- Cinematic intro overlay (homepage, once per session) -------- */
@@ -60,22 +71,24 @@
       introOverlay.classList.add("is-active");
       document.body.classList.add("intro-active");
       let dismissed = false;
-      const dismiss = () => {
+      const dismiss = (fromGesture) => {
         if (dismissed) return;
         dismissed = true;
         sessionStorage.setItem("pcIntroSeen", "1");
         introOverlay.classList.add("is-hidden");
         document.body.classList.remove("intro-active");
+        // Only unmute when dismissed by an actual user gesture (browser autoplay policy)
+        if (fromGesture) setSoundState(true);
         setTimeout(() => introOverlay.remove(), 1000);
       };
       const skipBtn = document.getElementById("introSkip");
-      if (skipBtn) skipBtn.addEventListener("click", (e) => { e.stopPropagation(); dismiss(); });
-      introOverlay.addEventListener("click", dismiss);
+      if (skipBtn) skipBtn.addEventListener("click", (e) => { e.stopPropagation(); dismiss(true); });
+      introOverlay.addEventListener("click", () => dismiss(true));
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" || e.key === "Enter") dismiss();
+        if (e.key === "Escape" || e.key === "Enter") dismiss(true);
       });
-      // Auto-dismiss safety net
-      setTimeout(dismiss, 5500);
+      // Auto-dismiss safety net (no gesture — stays muted)
+      setTimeout(() => dismiss(false), 5500);
     }
   }
 

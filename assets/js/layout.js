@@ -77,4 +77,20 @@
       overlay.appendChild(row);
     }
   }
+
+  // ---- Back-to-top button (sitewide) ----
+  if (!document.querySelector(".back-to-top")) {
+    const btn = document.createElement("button");
+    btn.className = "back-to-top";
+    btn.type = "button";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.41 6.7 12.7a1 1 0 1 1-1.4-1.42l6-6a1 1 0 0 1 1.4 0l6 6a1 1 0 1 1-1.4 1.42L12 7.41z"/></svg>';
+    btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    document.body.appendChild(btn);
+    const onScroll = () => {
+      btn.classList.toggle("is-visible", window.scrollY > 600);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 })();
