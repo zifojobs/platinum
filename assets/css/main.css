@@ -798,14 +798,12 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   .hero .hero-video { display: none; }
   .hero .hero-image-mobile { display: block; }
 }
-/* Text-reveal overlay: appears with the hero titles. Darkens the whole frame
-   EXCEPT a soft transparent window over the Platinum logo at the bottom of
-   the last video frame, so the logo keeps breathing through. */
+/* Text-reveal overlay: appears with the hero titles. Uniform darken across
+   the whole hero frame so titles read consistently regardless of underlying
+   video content. */
 .hero .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
-  background:
-    radial-gradient(ellipse 38% 24% at 80% 92%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.6) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.22) 45%, rgba(0,0,0,0.4) 100%);
+  background: rgba(0, 0, 0, 0.45);
   opacity: 0;
   transition: opacity 1.2s ease;
   pointer-events: none;
