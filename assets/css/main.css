@@ -164,7 +164,6 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   height: 100%;
   justify-content: space-between;
   gap: 16px;
-  overflow-y: auto;
 }
 
 .logo { display: block; margin-bottom: 0; }
@@ -222,7 +221,12 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 }
 .header-cta:hover { color: #fff; }
 
-.header-social { display: flex; gap: 10px; flex-wrap: wrap; }
+.header-social {
+  display: grid;
+  grid-template-columns: repeat(2, 36px);
+  gap: 10px;
+  justify-content: center;
+}
 .header-social a {
   width: 36px; height: 36px;
   border: 1px solid var(--color-border-light);
