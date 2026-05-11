@@ -35,11 +35,14 @@ Context file for AI assistants working on this repo. Update this as the project 
 
 ## Design system
 
-- **Primary background: white** (`--color-light: #ffffff`) — client directive
-- Accent gold `--color-accent: #b8935a` (matches the logo's tagline colour)
-- Ivory tint `--color-light-alt: #f7f5f1` — used for the sidebar, testimonial, about/services secondary sections
-- Dark text `--color-text-dark: #1a1a1a`; muted `rgba(26,26,26,0.62)`
-- **Sidebar: ivory (`--color-light-alt`)**. The logo has a dark rectangle baked-in so it reads on ivory but not on pure white — this is why the sidebar uses a tinted near-white rather than `#ffffff`.
+**Colors extracted purely from logo:**
+- **Dark navy** `--color-text-dark: #2d2d2d` (from "Construction Corporation" text) — headings, nav, primary text
+- **Silver/grey** `--color-accent: #8c8c8c` (from "platinum" wordmark) — accents, highlights, button hover states
+- **Light grey** `--color-light-grey: #dcdcdc` (from tagline) — secondary text, borders, dividers
+- **White** `--color-light: #ffffff` (body background)
+- **Subtle off-white** `--color-light-alt: #f9f9f9` (sidebar, minimal contrast backgrounds)
+
+Premium, professional palette derived entirely from logo identity (dark navy, silver, light grey, white). No arbitrary colors.
 - Typography: uppercase Oswald for headings/nav, Inter for body
 - Transitions: `cubic-bezier(0.65, 0.05, 0.36, 1)` at 0.6s
 

@@ -3,20 +3,21 @@
    ========================================================= */
 
 :root {
-  /* Colors — white-primary palette harmonized with logo (silver/platinum + warm gold) */
-  --color-bg: #0e0e0e;
-  --color-bg-alt: #151515;
-  --color-light: #ffffff;
-  --color-light-alt: #f7f5f1;
-  --color-accent: #b8935a;          /* warm gold from logo tagline */
-  --color-accent-hover: #d4ae74;
-  --color-silver: #8a8d92;          /* platinum silver from logo wordmark */
+  /* Colors — extracted purely from logo (dark navy, silver grey, light grey, white) */
+  --color-light: #ffffff;           /* white background */
+  --color-light-alt: #f9f9f9;       /* subtle off-white (sidebar, minimal contrast) */
+  --color-text-dark: #2d2d2d;       /* dark navy from "Construction Corporation" text */
+  --color-accent: #8c8c8c;          /* silver/grey from "platinum" wordmark */
+  --color-accent-hover: #7a7a7a;    /* darker silver on hover */
+  --color-silver: #8c8c8c;          /* same as accent (logo wordmark) */
+  --color-light-grey: #dcdcdc;      /* light grey from tagline (secondary text, borders) */
   --color-text-light: #ffffff;
-  --color-text-dark: #1a1a1a;
-  --color-muted-light: rgba(255, 255, 255, 0.65);
-  --color-muted-dark: rgba(26, 26, 26, 0.62);
-  --color-border-dark: rgba(255, 255, 255, 0.09);
-  --color-border-light: rgba(0, 0, 0, 0.09);
+  --color-bg: #0e0e0e;              /* dark background for hero overlays */
+  --color-bg-alt: #151515;
+  --color-muted-light: rgba(255, 255, 255, 0.7);
+  --color-muted-dark: rgba(45, 45, 45, 0.65);
+  --color-border-dark: rgba(45, 45, 45, 0.12);
+  --color-border-light: rgba(140, 140, 140, 0.15);
 
   /* Typography */
   --font-display: "Oswald", "Arial Narrow", sans-serif;
@@ -119,7 +120,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   position: relative;
   overflow: hidden;
 }
-.btn-primary { background: var(--color-accent); color: #fff; }
+.btn-primary { background: var(--color-accent); color: var(--color-text-dark); }
 .btn-primary:hover { background: var(--color-accent-hover); transform: translateY(-2px); }
 
 .btn-ghost { background: transparent; color: inherit; border-color: currentColor; }
@@ -155,7 +156,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   backdrop-filter: blur(14px);
   border-right: 1px solid var(--color-border-light);
   transition: transform 0.4s var(--ease);
-  padding: 24px 32px;
+  padding: 24px 20px;
   color: var(--color-text-dark);
 }
 
@@ -249,7 +250,80 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 
 /* Layout shift to accommodate sidebar (desktop only) */
 @media (min-width: 1025px) {
-  body { padding-left: var(--sidebar-w); }
+  body {
+    padding-left: var(--sidebar-w);
+    transition: padding 0.4s var(--ease);
+  }
+}
+
+/* Desktop scrolled state: sidebar slides out left, top bar drops down from top */
+@media (min-width: 1025px) {
+  .site-header {
+    transition: transform 0.35s var(--ease);
+  }
+  /* Phase 1: sidebar slides out to the left before top bar appears */
+  body.is-exiting-sidebar .site-header {
+    transform: translateX(-100%);
+  }
+  @keyframes headerFadeUp {
+    from { opacity: 0; transform: translateY(-100%); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  body.is-scrolled {
+    padding-left: 0;
+    padding-top: 90px;
+  }
+  body.is-scrolled .site-header {
+    bottom: auto;
+    width: 100%;
+    height: 90px;
+    padding: 14px 48px;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-light);
+    box-shadow: 0 2px 14px rgba(0,0,0,0.05);
+    animation: headerFadeUp 0.5s var(--ease) both;
+  }
+  body.is-scrolled .header-inner {
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    gap: 36px;
+  }
+  body.is-scrolled .logo-us,
+  body.is-scrolled .logo-divider { display: none; }
+  body.is-scrolled .logo img { height: 56px; }
+  body.is-scrolled .nav-desktop {
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 36px;
+    width: auto;
+  }
+  body.is-scrolled .nav-desktop a {
+    border-bottom: none;
+    padding: 0;
+    width: auto;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+  }
+  body.is-scrolled .nav-desktop a::before { display: none; }
+  body.is-scrolled .nav-desktop a:hover,
+  body.is-scrolled .nav-desktop a.active { padding-left: 0; }
+  body.is-scrolled .header-bottom {
+    flex-direction: row;
+    margin-top: 0;
+    align-items: center;
+    gap: 0;
+  }
+  body.is-scrolled .header-social,
+  body.is-scrolled .header-tagline { display: none; }
+  body.is-scrolled .header-cta {
+    width: auto;
+    padding: 14px 26px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
 }
 
 /* Burger (mobile only) */
@@ -508,7 +582,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 }
 #gallery-grid .portfolio-info .portfolio-category {
   font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em;
-  text-transform: uppercase; color: var(--color-accent); margin-bottom: 6px;
+  text-transform: uppercase; color: var(--color-text-dark); margin-bottom: 6px;
 }
 #gallery-grid .portfolio-info .portfolio-title {
   font-family: var(--font-display); font-size: 1.15rem; text-transform: uppercase;
@@ -530,8 +604,8 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   transform: translateY(10px); opacity: 0.9; transition: all 0.4s var(--ease);
 }
 .portfolio-item:hover .portfolio-caption { transform: translateY(0); opacity: 1; }
-.portfolio-category { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 8px; }
-.portfolio-title { font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase; line-height: 1.2; font-weight: 500; }
+.portfolio-category { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: #ffffff; margin-bottom: 8px; }
+.portfolio-title { font-family: var(--font-display); font-size: 1.2rem; text-transform: uppercase; line-height: 1.2; font-weight: 500; color: #ffffff; }
 
 @media (max-width: 900px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .portfolio-grid { grid-template-columns: 1fr; } }
