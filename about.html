@@ -26,7 +26,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
   <meta name="google-site-verification" content="5DxKbl8P6LLfUzy5PgN2GffcdyU3mWMJC97-5wrd3tE" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="stylesheet" href="assets/css/main.css?v=6" />
+  <link rel="stylesheet" href="assets/css/main.css?v=7" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://platinum-site.vercel.app/about#webpage","url":"https://platinum-site.vercel.app/about","name":"About Us | Platinum Construction in Ontario, Canada","isPartOf":{"@id":"https://platinum-site.vercel.app/#website"},"about":{"@id":"https://platinum-site.vercel.app/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://platinum-site.vercel.app/"},{"@type":"ListItem","position":2,"name":"About","item":"https://platinum-site.vercel.app/about"}]}]}</script>
   <!-- Google Analytics 4 — to activate, uncomment and replace G-XXXXXXXXXX with the real Measurement ID -->
   <!--
@@ -169,17 +169,34 @@
       <div class="eyebrow">Trusted by</div>
       <h2 class="h-xl">National brands. Local craftsmanship.</h2>
     </div>
-    <div class="reveal reveal-delay-1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:40px;align-items:center;justify-items:center;padding:30px 0;border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Starbucks</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Tim Hortons</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Chipotle</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Firehouse Subs</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Wendy's</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Sola Salon</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Indochino</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Noodles &amp; Co.</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Nissan</div>
-      <div style="font-family:var(--font-display);font-size:1.1rem;letter-spacing:.15em;color:var(--color-muted-dark);text-transform:uppercase;">Planet Fitness</div>
+    <div class="brands-marquee reveal reveal-delay-1">
+      <div class="brands-track">
+        <div class="brand-logo"><img src="https://img.logo.dev/starbucks.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Starbucks" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/timhortons.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Tim Hortons" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/chipotle.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Chipotle" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/firehousesubs.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Firehouse Subs" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/wendys.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Wendy's" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/solasalons.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Sola Salon Studios" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/indochino.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Indochino" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/noodles.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Noodles &amp; Company" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/nissan.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Nissan" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/planetfitness.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="Planet Fitness" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/kfc.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="KFC" loading="lazy" /></div>
+        <div class="brand-logo"><img src="https://img.logo.dev/mcdonalds.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="McDonald's" loading="lazy" /></div>
+        <!-- duplicate for seamless infinite loop -->
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/starbucks.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/timhortons.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/chipotle.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/firehousesubs.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/wendys.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/solasalons.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/indochino.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/noodles.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/nissan.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/planetfitness.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/kfc.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+        <div class="brand-logo" aria-hidden="true"><img src="https://img.logo.dev/mcdonalds.com?token=pk_X-1ZO13GSgeOoUrIuJ6GMQ&size=200" alt="" loading="lazy" /></div>
+      </div>
     </div>
   </div>
 </section>

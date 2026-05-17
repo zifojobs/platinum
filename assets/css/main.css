@@ -1425,3 +1425,51 @@ body.intro-active { overflow: hidden; }
   .article__body { font-size: 1.05rem; line-height: 1.7; }
   .article-cta { padding: 28px 24px; }
 }
+
+/* =========================================================
+   CLIENT BRANDS — Infinite marquee carousel
+   ========================================================= */
+.brands-marquee {
+  overflow: hidden;
+  padding: 40px 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.brands-track {
+  display: flex;
+  gap: 70px;
+  width: max-content;
+  animation: brandsScroll 45s linear infinite;
+  align-items: center;
+}
+.brands-marquee:hover .brands-track { animation-play-state: paused; }
+.brand-logo {
+  flex-shrink: 0;
+  width: 140px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+  opacity: 0.85;
+}
+.brand-logo:hover img {
+  transform: scale(1.08);
+  opacity: 1;
+}
+@keyframes brandsScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brands-track { animation: none; }
+}
