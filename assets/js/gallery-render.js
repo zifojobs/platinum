@@ -10,11 +10,13 @@
   const projects = window.PROJECTS;
   const cats = Array.from(new Set(projects.map(p => p.category)));
 
-  // Build filter buttons
-  const filters = ["all", ...cats];
-  filterWrap.innerHTML = filters
-    .map((c, i) => `<button data-filter="${c}" class="${i === 0 ? "active" : ""}">${window.CATEGORY_LABELS[c] || c}</button>`)
-    .join("");
+  // Build filter buttons (only if filter container present)
+  if (filterWrap) {
+    const filters = ["all", ...cats];
+    filterWrap.innerHTML = filters
+      .map((c, i) => `<button data-filter="${c}" class="${i === 0 ? "active" : ""}">${window.CATEGORY_LABELS[c] || c}</button>`)
+      .join("");
+  }
 
   // Build grid — image on top, title/location below in black
   grid.innerHTML = projects
