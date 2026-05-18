@@ -1464,16 +1464,16 @@ body.intro-active { overflow: hidden; }
 }
 .brands-track {
   display: flex;
-  gap: 70px;
+  gap: 90px;
   width: max-content;
-  animation: brandsScroll 45s linear infinite;
+  animation: brandsScroll 55s linear infinite;
   align-items: center;
 }
 .brands-marquee:hover .brands-track { animation-play-state: paused; }
 .brand-logo {
   flex-shrink: 0;
-  width: 140px;
-  height: 80px;
+  width: 240px;
+  height: 140px;
   display: flex;
   align-items: center;
   justify-content: center;
