@@ -266,7 +266,7 @@
     }, { passive: true });
   }
 
-  /* -------- Current year in footer -------- */
-  const yearEl = document.querySelector("[data-year]");
+  /* -------- Current year in footer (legacy, only updates <span data-year>) -------- */
+  const yearEl = document.querySelector("span[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();

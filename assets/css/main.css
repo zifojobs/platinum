@@ -578,45 +578,70 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 .portfolio-section { background: var(--color-light); color: var(--color-text-dark); }
 .portfolio-section .portfolio-grid { background: var(--color-light); }
 
-/* Gallery page variant — image on top, info in black below, no overlay */
-#gallery-grid.portfolio-grid { grid-template-columns: repeat(5, 1fr); gap: 24px; }
-#gallery-grid .portfolio-item {
+/* Gallery page variant — image on top, info in black below, no overlay.
+   Targets the legacy single #gallery-grid layout AND the new
+   .gallery-timeline (year-grouped) layout where each year hosts its own
+   inner .portfolio-grid. */
+#gallery-grid.portfolio-grid,
+.gallery-timeline .portfolio-grid { grid-template-columns: repeat(5, 1fr); gap: 24px; }
+#gallery-grid .portfolio-item,
+.gallery-timeline .portfolio-item {
   aspect-ratio: auto;
   background: transparent;
   display: flex; flex-direction: column;
 }
-#gallery-grid .portfolio-item::after { display: none; }
-#gallery-grid .portfolio-thumb {
+#gallery-grid .portfolio-item::after,
+.gallery-timeline .portfolio-item::after { display: none; }
+#gallery-grid .portfolio-thumb,
+.gallery-timeline .portfolio-thumb {
   position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
   background: #f0ede7;
 }
-#gallery-grid .portfolio-thumb img {
+#gallery-grid .portfolio-thumb img,
+.gallery-timeline .portfolio-thumb img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.8s var(--ease);
   filter: grayscale(0.1);
 }
-#gallery-grid .portfolio-item:hover .portfolio-thumb img { transform: scale(1.06); filter: grayscale(0); }
-#gallery-grid .portfolio-info {
+#gallery-grid .portfolio-item:hover .portfolio-thumb img,
+.gallery-timeline .portfolio-item:hover .portfolio-thumb img { transform: scale(1.06); filter: grayscale(0); }
+#gallery-grid .portfolio-info,
+.gallery-timeline .portfolio-info {
   padding: 14px 4px 0;
   color: var(--color-text-dark);
 }
-#gallery-grid .portfolio-info .portfolio-category {
+#gallery-grid .portfolio-info .portfolio-category,
+.gallery-timeline .portfolio-info .portfolio-category {
   font-family: var(--font-display); font-size: 0.62rem; letter-spacing: 0.28em;
   text-transform: uppercase; color: var(--color-text-dark); margin-bottom: 4px;
 }
-#gallery-grid .portfolio-info .portfolio-title {
+#gallery-grid .portfolio-info .portfolio-title,
+.gallery-timeline .portfolio-info .portfolio-title {
   font-family: var(--font-display); font-size: 0.95rem; text-transform: uppercase;
   color: var(--color-text-dark); line-height: 1.25; font-weight: 500; margin-bottom: 4px;
 }
-#gallery-grid .portfolio-info .portfolio-loc {
+#gallery-grid .portfolio-info .portfolio-loc,
+.gallery-timeline .portfolio-info .portfolio-loc {
   font-size: 0.72rem; color: var(--color-muted-dark);
 }
-@media (max-width: 1200px) { #gallery-grid.portfolio-grid { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 900px)  { #gallery-grid.portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 640px)  { #gallery-grid.portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
-@media (max-width: 420px)  { #gallery-grid.portfolio-grid { grid-template-columns: 1fr; } }
+@media (max-width: 1200px) {
+  #gallery-grid.portfolio-grid,
+  .gallery-timeline .portfolio-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 900px) {
+  #gallery-grid.portfolio-grid,
+  .gallery-timeline .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  #gallery-grid.portfolio-grid,
+  .gallery-timeline .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 420px) {
+  #gallery-grid.portfolio-grid,
+  .gallery-timeline .portfolio-grid { grid-template-columns: 1fr; }
+}
 .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .portfolio-item { position: relative; aspect-ratio: 4/5; overflow: hidden; background: #222; cursor: pointer; }
 .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); filter: grayscale(0.3); }
@@ -1503,8 +1528,12 @@ body.intro-active { overflow: hidden; }
    GALLERY TIMELINE — Editorial year-grouped portfolio
    ========================================================= */
 .gallery-timeline { display: block; }
-.gallery-year-section { margin-bottom: clamp(60px, 9vw, 130px); }
+.gallery-year-section {
+  padding: 0;                    /* override global `section` padding */
+  margin-bottom: clamp(50px, 6vw, 90px);
+}
 .gallery-year-section:last-child { margin-bottom: 0; }
+.gallery-year-section[data-year="recent"] { margin-bottom: clamp(60px, 7vw, 100px); }
 
 .gallery-year-header {
   position: relative;
@@ -1512,8 +1541,8 @@ body.intro-active { overflow: hidden; }
   grid-template-columns: minmax(60px, 14vw) auto 1fr;
   align-items: end;
   column-gap: clamp(20px, 3vw, 40px);
-  padding: 18px 0 36px;
-  margin-bottom: clamp(24px, 4vw, 50px);
+  padding: 4px 0 12px;
+  margin-bottom: clamp(10px, 1.5vw, 18px);
   border-bottom: 1px solid rgba(140, 140, 140, 0.10);
 }
 

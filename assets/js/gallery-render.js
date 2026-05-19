@@ -56,16 +56,22 @@
 
   grid.innerHTML = orderedKeys.map(key => {
     const list = groups.get(key);
-    const label = key === "recent" ? "Recent Projects" : key;
-    const sublabel = key === "recent"
-      ? "Pending completion dates"
-      : `${list.length} project${list.length > 1 ? "s" : ""}`;
     const cards = list.map(cardHTML).join("");
+    // Undated projects render as a plain 5-col grid (no editorial header).
+    if (key === "recent") {
+      return `
+        <section class="gallery-year-section" data-year="recent">
+          <div class="portfolio-grid" id="gallery-grid-recent">
+            ${cards}
+          </div>
+        </section>`;
+    }
+    const sublabel = `${list.length} project${list.length > 1 ? "s" : ""}`;
     return `
       <section class="gallery-year-section" data-year="${key}">
         <header class="gallery-year-header">
           <div class="gallery-year-line" aria-hidden="true"></div>
-          <h3 class="gallery-year-label">${label}</h3>
+          <h3 class="gallery-year-label">${key}</h3>
           <div class="gallery-year-meta">${sublabel}</div>
         </header>
         <div class="portfolio-grid" id="gallery-grid-${key}">
