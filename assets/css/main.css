@@ -1498,3 +1498,118 @@ body.intro-active { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .brands-track { animation: none; }
 }
+
+/* =========================================================
+   GALLERY TIMELINE — Editorial year-grouped portfolio
+   ========================================================= */
+.gallery-timeline { display: block; }
+.gallery-year-section { margin-bottom: clamp(60px, 9vw, 130px); }
+.gallery-year-section:last-child { margin-bottom: 0; }
+
+.gallery-year-header {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(60px, 14vw) auto 1fr;
+  align-items: end;
+  column-gap: clamp(20px, 3vw, 40px);
+  padding: 18px 0 36px;
+  margin-bottom: clamp(24px, 4vw, 50px);
+  border-bottom: 1px solid rgba(140, 140, 140, 0.10);
+}
+
+.gallery-year-line {
+  align-self: center;
+  height: 1px;
+  background: var(--color-text-dark);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 1.1s var(--ease);
+}
+
+.gallery-year-label {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 9vw, 7rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--color-text-dark);
+  margin: 0;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+
+.gallery-year-meta {
+  justify-self: end;
+  align-self: end;
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  padding-bottom: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s var(--ease) 0.15s, transform 0.9s var(--ease) 0.15s;
+}
+
+/* Each card inside a year section fades up with a tiny stagger.
+   Stagger is implemented via nth-child delays; full reveal triggered by .is-revealed. */
+.gallery-year-section .portfolio-item {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.gallery-year-section.is-revealed .gallery-year-line { transform: scaleX(1); }
+.gallery-year-section.is-revealed .gallery-year-label,
+.gallery-year-section.is-revealed .gallery-year-meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+.gallery-year-section.is-revealed .portfolio-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Staggered card reveal (up to 20 cards covered, then it loops harmlessly) */
+.gallery-year-section.is-revealed .portfolio-item:nth-child(1)  { transition-delay: 0.10s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(2)  { transition-delay: 0.16s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(3)  { transition-delay: 0.22s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(4)  { transition-delay: 0.28s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(5)  { transition-delay: 0.34s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(6)  { transition-delay: 0.40s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(7)  { transition-delay: 0.46s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(8)  { transition-delay: 0.52s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(9)  { transition-delay: 0.58s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(10) { transition-delay: 0.64s; }
+.gallery-year-section.is-revealed .portfolio-item:nth-child(n+11) { transition-delay: 0.70s; }
+
+/* Recent (undated) section uses italic label for distinction */
+.gallery-year-section[data-year="recent"] .gallery-year-label {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+}
+
+@media (max-width: 768px) {
+  .gallery-year-header {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+  .gallery-year-line { display: none; }
+  .gallery-year-meta { justify-self: start; padding-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-year-line,
+  .gallery-year-label,
+  .gallery-year-meta,
+  .gallery-year-section .portfolio-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
