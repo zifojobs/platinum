@@ -11,7 +11,7 @@ window.PROJECTS = [
   { slug: "Chipotle Mexican Grill 492 Edinburgh Rd. S. Guelph, ON", title: "Chipotle Mexican Grill", location: "Guelph, ON", category: "restaurant", brand: "Chipotle", images: 34, year: null, hasTour: true, tour: "#" },
   { slug: "Chipotle- Markville Mall 5000 Hwy#7, Markham, ON", title: "Chipotle Mexican Grill", location: "Markville Mall, Markham, ON", category: "restaurant", brand: "Chipotle", images: 37, year: null, hasTour: true, tour: "#" },
   { slug: "Dairy Queen - 2 King St S, Alliston, ON", title: "Dairy Queen", location: "Alliston, ON", category: "restaurant", brand: "Dairy Queen", images: 25, year: null, hasTour: false, tour: "#" },
-  { slug: "Edo Japan - Square One Mississauga, ON", title: "Edo Japan", location: "Square One, Mississauga, ON", category: "restaurant", brand: "Edo Japan", images: 19, year: null, hasTour: false, tour: "#" },
+  { slug: "Edo Japan - Square One Mississauga, ON", title: "Edo Japan", location: "Square One, Mississauga, ON", category: "restaurant", brand: "Edo Japan", images: 18, year: null, hasTour: false, tour: "#" },
   { slug: "Firehouse Subs - 608 Santa Maria Blvd. Milton, ON", title: "Firehouse Subs", location: "Milton, ON", category: "restaurant", brand: "Firehouse Subs", images: 25, year: 2018, hasTour: true, tour: "#" },
   { slug: "Fresh Since 1999 Restaurant- Sherway Gardens Mall, Etobicoke, ON", title: "Fresh Restaurant", location: "Sherway Gardens, Etobicoke, ON", category: "restaurant", brand: "Fresh", images: 21, year: null, hasTour: true, tour: "#" },
   { slug: "Goose Island Brewery - 58 The Esplanade, Toronto, ON", title: "Goose Island Brewery", location: "Toronto, ON", category: "restaurant", brand: "Goose Island", images: 18, year: null, hasTour: false, tour: "#" },
