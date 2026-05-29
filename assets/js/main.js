@@ -257,6 +257,56 @@
     });
   });
 
+  /* -------- Story video modal (blurred backdrop, minimal controls) -------- */
+  const storyModal = document.getElementById("storyModal");
+  if (storyModal) {
+    const trigger = document.getElementById("storyTrigger");
+    const video = document.getElementById("storyVideo");
+    const closeBtn = document.getElementById("storyClose");
+    const toggleBtn = document.getElementById("storyToggle");
+    const fsBtn = document.getElementById("storyFs");
+
+    const openStory = () => {
+      storyModal.classList.add("open");
+      storyModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      video.play().catch(() => {});
+    };
+    const closeStory = () => {
+      storyModal.classList.remove("open");
+      storyModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      video.pause();
+      video.currentTime = 0;
+    };
+    const togglePlay = () => {
+      if (video.paused) video.play().catch(() => {});
+      else video.pause();
+    };
+
+    if (trigger) trigger.addEventListener("click", openStory);
+    closeBtn.addEventListener("click", closeStory);
+    toggleBtn.addEventListener("click", togglePlay);
+    video.addEventListener("click", togglePlay);
+    video.addEventListener("play", () => storyModal.classList.add("is-playing"));
+    video.addEventListener("pause", () => storyModal.classList.remove("is-playing"));
+    video.addEventListener("ended", () => storyModal.classList.remove("is-playing"));
+    fsBtn.addEventListener("click", () => {
+      const el = video;
+      if (el.requestFullscreen) el.requestFullscreen();
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+      else if (el.webkitEnterFullscreen) el.webkitEnterFullscreen(); /* iOS */
+    });
+    storyModal.addEventListener("click", (e) => {
+      if (e.target === storyModal) closeStory();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (!storyModal.classList.contains("open")) return;
+      if (e.key === "Escape") closeStory();
+      if (e.key === " " || e.code === "Space") { e.preventDefault(); togglePlay(); }
+    });
+  }
+
   /* -------- Parallax hero (subtle) — only for image backgrounds, not video -------- */
   const heroBg = document.querySelector(".page-hero-bg, .hero:not(:has(.hero-video)) .hero-bg");
   if (heroBg) {

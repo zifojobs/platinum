@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
   <meta name="google-site-verification" content="5DxKbl8P6LLfUzy5PgN2GffcdyU3mWMJC97-5wrd3tE" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="stylesheet" href="assets/css/main.css?v=23" />
+  <link rel="stylesheet" href="assets/css/main.css?v=24" />
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","GeneralContractor","LocalBusiness"],"@id":"https://platinum-site.vercel.app/#organization","name":"Platinum Construction Corporation","url":"https://platinum-site.vercel.app/","logo":"https://platinum-site.vercel.app/canada-logo.png","image":"https://platinum-site.vercel.app/og-image.jpg","description":"Commercial general contractor delivering design-build, franchise rollouts, hospitality and custom residential projects across Ontario and the US since 1997.","foundingDate":"1997","telephone":"+1-905-763-8119","address":{"@type":"PostalAddress","streetAddress":"83 Citation Dr. Unit 2","addressLocality":"Vaughan","addressRegion":"ON","postalCode":"L4K 2Z6","addressCountry":"CA"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"sameAs":["https://twitter.com/platinumconst1","https://www.instagram.com/platinum_construction_corp","https://www.linkedin.com/company/platinum-construction-corporation"],"subOrganization":{"@type":["Organization","LocalBusiness"],"@id":"https://platinum-site.vercel.app/#organization-us","name":"Platinum Construction of America, Inc.","telephone":"+1-855-763-8119","address":{"@type":"PostalAddress","streetAddress":"1441 Broadway, 6th Floor, Suite 6178","addressLocality":"New York","addressRegion":"NY","postalCode":"10018","addressCountry":"US"},"parentOrganization":{"@id":"https://platinum-site.vercel.app/#organization"}}},{"@type":"WebSite","@id":"https://platinum-site.vercel.app/#website","url":"https://platinum-site.vercel.app/","name":"Platinum Construction Corporation","publisher":{"@id":"https://platinum-site.vercel.app/#organization"},"inLanguage":"en-CA"},{"@type":"WebPage","@id":"https://platinum-site.vercel.app/#webpage","url":"https://platinum-site.vercel.app/","name":"Platinum Construction | Commercial GC in Ontario Since 1997","isPartOf":{"@id":"https://platinum-site.vercel.app/#website"},"about":{"@id":"https://platinum-site.vercel.app/#organization"},"inLanguage":"en-CA"}]}</script>
   <!-- Google Analytics 4 — to activate, uncomment and replace G-XXXXXXXXXX with the real Measurement ID -->
   <!--
@@ -96,7 +96,7 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <video class="hero-video" autoplay muted playsinline preload="auto"
-         data-src-desktop="Final_Video_Hero.mp4">
+         data-src-desktop="Hero.mp4">
   </video>
   <div class="hero-image-mobile" style="background-image:url('hero-mobile.webp');"></div>
   <div class="hero-overlay"></div>
@@ -172,11 +172,12 @@
       <h2 class="h-xl">Our story, in motion.</h2>
       <p class="text-lead" style="margin:24px auto 0;color:var(--color-muted-dark);">Over three decades of building across Ontario — a journey of partnerships, craftsmanship and delivery.</p>
     </div>
-    <div class="video-wrap reveal reveal-delay-1">
-      <video controls preload="metadata" playsinline poster="projects/New Plaza Development - 171 George Reynolds Dr. Courtice, ON/image_1.jpg">
-        <source src="Platinum_Final.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <button class="video-wrap reveal reveal-delay-1" id="storyTrigger" type="button" aria-label="Play our story video">
+      <img class="video-poster" src="story-poster.jpg" alt="Our story in motion — Platinum Construction" loading="lazy" />
+      <span class="video-play" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+      </span>
+    </button>
   </div>
 </section>
 
@@ -323,7 +324,24 @@
 <!-- ============ LIGHTBOX ============ -->
 <div class="lightbox" aria-hidden="true"><div class="lightbox-content"></div></div>
 
+<!-- ============ STORY VIDEO MODAL ============ -->
+<div class="video-modal" id="storyModal" aria-hidden="true">
+  <button class="video-modal-close" id="storyClose" type="button" aria-label="Close video">&times;</button>
+  <div class="video-modal-stage">
+    <video id="storyVideo" playsinline preload="none" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture>
+      <source src="Platinum-30 Years_v18.mp4" type="video/mp4" />
+    </video>
+    <button class="video-modal-toggle" id="storyToggle" type="button" aria-label="Play / pause">
+      <svg class="vm-icon vm-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+      <svg class="vm-icon vm-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
+    </button>
+    <button class="video-modal-fs" id="storyFs" type="button" aria-label="Fullscreen">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" /></svg>
+    </button>
+  </div>
+</div>
+
 <script src="assets/js/layout.js?v=8"></script>
-<script src="assets/js/main.js?v=7"></script>
+<script src="assets/js/main.js?v=8"></script>
 </body>
 </html>
