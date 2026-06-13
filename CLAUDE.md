@@ -128,6 +128,19 @@ Premium, professional palette derived entirely from logo identity (dark navy, si
 - Flagged to Saïbo (not yet relayed to SEO team): About/Contact titles ~72–74 chars will truncate in Google (~60); Ontario→Canada repositioning worth confirming.
 - Gotcha: `blog.html` uses a raw `&` in its title (not `&amp;`) unlike other pages.
 
+### Round 11 — 2026-06-13 — Before/after Hero animations, hero loop, security headers, contact form, go-live prep
+
+- **Client feedback in `Changes/` folder** (17 annotated screenshots, North-America rebrand: dual entity Platinum Construction Corporation **&** Platinum Construction of America Inc., NY office, 30+/40+ stats, colour logos, X icon, etc.) — **Saïbo confirmed all of it is already implemented** in the deployed site; only the Hero animations remained.
+- **Before/after Hero animations (Higgsfield)** — the 4 last pairs (15 Swiss Chalet, 16 Harvey's, 18 Nothing Bundt Cakes, 19 Super 8) were blocking. Root cause was **NOT credits/account**: (1) the 4 `After` photos were 3:2 / 4:3 while the `Before` blueprints are 16:9 → Kling first-last-frame rejects mismatched ratios → cropped all 4 to 1376×768 16:9 (in `Design sans titre/_fixed/`); (2) then **Kling 3.0 with audio + enhance ON fails** ("Failed / Credits refunded"). **Winning recipe: `kling3_0`, sound=off, enhance=off, simple morph prompt, start_image+end_image, duration 3, 16:9.** Generated via Higgsfield MCP → `Design sans titre/Anim_*.mp4`. Note: Swiss Chalet After came from a tiny 496×269 source → upscaled, slightly soft; ask client for a hi-res photo if a crisper morph is wanted.
+- **Final Hero video** — `Design sans titre/Final_Video_Hero.mp4` (85 MB, 1080p) re-encoded for web (ffmpeg, CRF 23, audio stripped, +faststart → 44 MB) and put in place of `Hero.mp4` (no HTML change; the hero loads `data-src-desktop="Hero.mp4"`).
+- **Hero now loops in the background** instead of freezing the last frame: `main.js` reveals the titles on the first `ended`, then sets `loop=true` and replays (a plain `loop` attribute would suppress `ended` and the titles would never show).
+- **Security headers** added to `vercel.json`: `Strict-Transport-Security` (HSTS) + `X-Frame-Options: SAMEORIGIN` (the other three headers were already present). CSP intentionally skipped for now (risk of breaking Fonts/Maps/Matterport before a fast go-live).
+- **Contact form wired to Web3Forms** (AJAX, honeypot `botcheck`, inline status, submitter email as `replyto`) in `contact.html`. **BLOCKER: needs a Web3Forms access key, but the key is emailed to the destination inbox `info@platinumconstruction.com` which Saïbo can't access and the client is unreachable.** Placeholder `__WEB3FORMS_ACCESS_KEY__` is live → form currently shows a graceful "please email us directly" fallback, delivers nothing. **Parked — fix later** (use an interim inbox Saïbo controls, swap to info@ once accessible).
+- **Domain switch is imminent.** Client has their own IT team that owns the domain; Saïbo sends them DNS to point at Vercel. Handoff method (recommended, keeps their MX/email): `A @ → 76.76.21.21` + `CNAME www → cname.vercel-dns.com` (confirm exact values in Vercel → Settings → Domains after adding the domain). Nameserver alternative: `ns1/ns2.vercel-dns.com`.
+- **Client recap email** drafted (English): page-by-page recap + Hero video + DNS section for IT. Contact-form section removed at Saïbo's request (parked). Not in repo — lives in chat.
+- Commit `44dc66f` (Hero.mp4, main.js, contact.html, vercel.json, **+ CLAUDE.md**) pushed to `main`. ⚠️ **CLAUDE.md is now tracked** — Saïbo reversed the old never-commit rule, informed of the public-history consequence. See updated memory `claudemd_never_commit.md`.
+- **Late client request — remove the years from the gallery.** `gallery-render.js` now renders a **single flat 5-column grid with no year headers/labels** (the editorial year-grouped timeline from Round 6 is gone). Ordering preserved (newest → oldest by `year`, undated first); `year` values stay in `projects-data.js` for ordering only, never displayed. 5-col is the existing `#gallery-grid.portfolio-grid` CSS (responsive 4/3/2). Cache-buster `gallery-render.js?v=7 → v=8`.
+
 ## Status
 
 - ✅ Client validation — done
@@ -137,7 +150,10 @@ Premium, professional palette derived entirely from logo identity (dark navy, si
 - ✅ **Hero section animation video** — `Hero.mp4` + Story modal (`Platinum-30 Years_v18.mp4`). Commit `ab31d82`.
 - ✅ **Projects timeline** — all 41+2 projects have `year:` wired (client CSV + 2026 estimates for the two Waterloo Chipotles). Commits `b2a47ae`, `fc4902f`.
 
-**Project is ship-ready.** Remaining items are external: domain-switch decision (security hardening + SEO/GSC follow-up — see memory files).
+**Project is ship-ready and go-live is imminent.** Remaining items are external/pending:
+- ⏳ **Contact form** — needs Web3Forms key (parked; see Round 11).
+- ⏳ **DNS** — handed to client's IT team (A+CNAME to Vercel; see Round 11).
+- ⏳ **Google Search Console** — re-verify on prod domain + resubmit sitemap after the switch; old WordPress still live = duplicate content until cutover.
 
 ## Conventions
 

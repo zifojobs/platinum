@@ -1,5 +1,6 @@
-/* Render gallery as an editorial timeline grouped by completion year.
-   Falls back to a single grid if the host page doesn't have #gallery-grid. */
+/* Render gallery as a single flat grid, ordered by completion year (newest →
+   oldest) but with NO visible year labels (client asked to remove the years).
+   Falls back to nothing if the host page doesn't have #gallery-grid. */
 (function () {
   const grid = document.getElementById("gallery-grid");
   const filterWrap = document.getElementById("gallery-filter");
@@ -20,19 +21,19 @@
       .join("");
   }
 
-  // Group projects by year. Dated projects bucket by their year; undated go to "recent".
+  // Order projects by completion year (newest → oldest); undated bucket first.
+  // We keep the ordering but render a single flat grid with no year headers.
   const groups = new Map();
   projects.forEach(p => {
     const key = (typeof p.year === "number") ? String(p.year) : "recent";
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(p);
   });
-
-  // Order: "recent" first, then years descending (most recent → oldest).
   const orderedKeys = Array.from(groups.keys())
     .filter(k => k !== "recent")
     .sort((a, b) => Number(b) - Number(a));
   if (groups.has("recent")) orderedKeys.unshift("recent");
+  const orderedProjects = orderedKeys.flatMap(k => groups.get(k));
 
   const cardHTML = (p) => {
     const folder = urlPath(p.slug);
@@ -50,35 +51,10 @@
       </a>`;
   };
 
-  // Convert the grid container into a timeline wrapper.
-  grid.classList.remove("portfolio-grid");
-  grid.classList.add("gallery-timeline");
-
-  grid.innerHTML = orderedKeys.map(key => {
-    const list = groups.get(key);
-    const cards = list.map(cardHTML).join("");
-    // Undated projects render as a plain 5-col grid (no editorial header).
-    if (key === "recent") {
-      return `
-        <section class="gallery-year-section" data-year="recent">
-          <div class="portfolio-grid" id="gallery-grid-recent">
-            ${cards}
-          </div>
-        </section>`;
-    }
-    const sublabel = `${list.length} project${list.length > 1 ? "s" : ""}`;
-    return `
-      <section class="gallery-year-section" data-year="${key}">
-        <header class="gallery-year-header">
-          <div class="gallery-year-line" aria-hidden="true"></div>
-          <h3 class="gallery-year-label">${key}</h3>
-          <div class="gallery-year-meta">${sublabel}</div>
-        </header>
-        <div class="portfolio-grid" id="gallery-grid-${key}">
-          ${cards}
-        </div>
-      </section>`;
-  }).join("");
+  // Single flat 5-column grid — no year sections, no headers.
+  grid.classList.add("portfolio-grid");
+  grid.classList.remove("gallery-timeline");
+  grid.innerHTML = orderedProjects.map(cardHTML).join("");
 
   // Hidden preload links so the lightbox can navigate every image of a clicked project
   const preload = document.createElement("div");
@@ -94,19 +70,4 @@
     }
   });
   document.body.appendChild(preload);
-
-  // Year-section reveal: fade-up header + staggered cards as each section scrolls in.
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-revealed");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: "0px 0px -8% 0px" });
-    grid.querySelectorAll(".gallery-year-section").forEach(s => io.observe(s));
-  } else {
-    grid.querySelectorAll(".gallery-year-section").forEach(s => s.classList.add("is-revealed"));
-  }
 })();
