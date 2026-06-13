@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  /* -------- Hero video: reveal content on end, freeze last frame -------- */
+  /* -------- Hero video: reveal content on end, then loop in background -------- */
   const heroVideo = document.querySelector(".hero .hero-video");
   if (heroVideo) {
     const content = document.querySelector(".hero .hero-content");
@@ -33,15 +33,15 @@
         heroVideo.load();
       }
       heroVideo.addEventListener("ended", () => {
-        // Freeze on last frame: pause slightly before the absolute end so the
-        // final painted frame remains visible (avoids black flash on some browsers).
-        try {
-          if (heroVideo.duration && isFinite(heroVideo.duration)) {
-            heroVideo.currentTime = Math.max(0, heroVideo.duration - 0.05);
-          }
-        } catch (e) {}
-        heroVideo.pause();
+        // Reveal the titles when the intro finishes, then keep the video
+        // playing on a loop in the background (no frozen last frame).
         reveal();
+        heroVideo.loop = true;
+        try {
+          heroVideo.currentTime = 0;
+        } catch (e) {}
+        const p = heroVideo.play();
+        if (p && typeof p.catch === "function") p.catch(() => {});
       });
       // Safety net: if the video fails to load/play, reveal after a delay.
       heroVideo.addEventListener("error", reveal);

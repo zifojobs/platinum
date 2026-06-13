@@ -7,7 +7,7 @@ Context file for AI assistants working on this repo. Update this as the project 
 - Client: **Platinum Construction Corporation** — commercial general contractor in Vaughan, ON, operating since 1997
 - Old site: https://platinumconstruction.com/home/
 - Repo: https://github.com/zifojobs/platinum.git (deployed to Vercel from `main`)
-- Approach: static HTML/CSS/JS prototype first, then port to WordPress + Elementor after client validation
+- Approach: static HTML/CSS/JS site is the **final deliverable** (WordPress + Elementor port was originally planned but is no longer on the table)
 - Language: English only
 - Design inspiration: Bauen Architecture ThemeForest template (fixed left sidebar layout)
 
@@ -93,17 +93,51 @@ Premium, professional palette derived entirely from logo identity (dark navy, si
 - **Logo size** — Reverted to 56px (Round 4 bump to 78px rolled back per client).
 - **Favicon** — `logo.png` wired as `<link rel="icon" type="image/png" href="logo.png" />` on all 7 HTML pages so the browser tab shows the brand mark.
 
-### Round 5 — current
+### Round 5
 
 - **New hero video** — `Video.mp4` replaced by `Hero_Video_Platinum.mp4` in `index.html`.
 - **Cinematic hero intro** — Hero video now plays once (no `loop`). Text content + scroll indicator start hidden (`.hero-content-hidden`, `.hero-scroll-hidden`) and fade in smoothly when the video fires `ended`. The video is then paused ~0.05s before its end so the last frame stays painted as the static background behind the titles. Safety net reveals content after 8s if the video fails to load.
 - **Bottom gradient preserved** — `.hero::after` black→transparent gradient kept.
 
-## Pending from client
+### Round 6
 
-- Matterport URLs for the remaining 14 virtual tours (pending from WP dashboard)
-- Final client validation
-- Port to WordPress + Elementor
+- **Editorial gallery timeline** — `gallery-render.js` now groups projects by completion year. Dated projects render under year headers (newest → oldest); undated ones bucket into a "recent" section at the top.
+- **Completion-dates CSV** — `Projects_Completion_Dates.csv` sent to the client to fill in missing per-project years. Until it comes back, most projects stay in the "recent" bucket (only Firehouse Subs and KFC have a `year` set in `assets/js/projects-data.js`).
+
+### Round 7
+
+- **Edo Japan gallery cover fix** — The Edo Japan folder's `image_0.jpg` was actually a Starbucks/Chipotle storefront photo mixed in by mistake, so the gallery card and lightbox first slide showed the wrong project. Removed it, renumbered the 18 real Edo Japan photos to `image_0..image_17`, dropped the count `19 → 18` in `projects-data.js`. Also added `projects/* (raw)/` to `.gitignore` so source-of-truth raw folders never get committed.
+
+### Round 8 — 2026-06-04 — Responsive audit
+
+- **Full responsive audit** of all pages × desktop (1440) / tablet (768) / mobile (390) via agent-browser + system Chrome.
+- 🔴 **Fixed: services.html "Contract Options" overflowed horizontally on mobile.** The process grid used an inline `grid-template-columns:repeat(3,1fr)` with no responsive override (inline styles can't be overridden by a media query), so it stayed 3-wide → horizontal scroll. Added the same scoped `<style>` max-width:900px → 1 column that `about.html` already uses. Commit `584d865`, pushed to `main` (Vercel auto-deploy). *(Commit subject has a stray `@` from a shell-syntax slip — cosmetic, history not rewritten to avoid a force-push.)*
+- **New pages now in repo** (not previously documented): `blog.html`, `blog/building-out-commercial-space-ontario.html`, `seo-strategy.html` (internal), `hero-prism-preview.html` (preview). All render responsively. There is also an untracked `_site/` (Eleventy build output) — **not deployed**; the live site serves the root `*.html`. Edit the root files, not `_site/`.
+- **Audit non-bugs** (artifacts of the offline test env, fine in production): gallery images are `loading="lazy"` (don't load in a full-page screenshot); contact's two empty boxes are Google Maps `<iframe>`s (need internet); stat counters show `0` until scroll-triggered. `.reveal` sections stay `opacity:0` until scrolled into view.
+- **Local dev note:** `npx live-server` hangs on its install prompt here → use `python -m http.server 5500` instead.
+
+### Round 9 — 2026-06-11 — Two new Chipotle Waterloo projects
+
+- Added **Chipotle — 550 King St N, Waterloo, ON** (30 photos) and **Chipotle — 655 Erb St W, Waterloo, ON** (33 photos) to the gallery. Addresses verified online (locations.chipotle.ca). Façade photo set as `image_0` (cover). `year: 2026` is an **estimate** chosen by Saïbo — confirm with client if they ever supply real completion dates. Cache-buster `projects-data.js?v=7`. Commit `fc4902f`, deployed and verified in prod by Saïbo.
+- Reminder confirmed: local headless check showed cover `naturalWidth: 0` — lazy-load false positive, fine in prod (matches the Round 8 audit non-bugs list).
+- Folder-rename gotcha: Windows Explorer open on a folder locks it (`Device or resource busy` on `mv`); also each Bash call is a fresh process — `cd` into a folder being renamed fails silently from a stale cwd.
+
+### Round 10 — 2026-06-11 — SEO meta titles + descriptions
+
+- Applied the SEO team's on-page plan (PDF `platinum construction Work Report - Existance page On page SEO.pdf`, kept local/gitignored): new meta title + description on all 8 pages, verbatim. Focus keyword **"Commercial Construction Company in Canada"** — note the positioning shift from Ontario to Canada-wide. Synced `<title>` + OG + Twitter tags + home JSON-LD `WebPage.name`. Commits `1e33eb1` (metas) + `3d5946e` (.gitignore), deployed.
+- Flagged to Saïbo (not yet relayed to SEO team): About/Contact titles ~72–74 chars will truncate in Google (~60); Ontario→Canada repositioning worth confirming.
+- Gotcha: `blog.html` uses a raw `&` in its title (not `&amp;`) unlike other pages.
+
+## Status
+
+- ✅ Client validation — done
+- ✅ Matterport URLs — handled by Saïbo (the 14 "SOON" tour cards on the Virtual Tours page remain as the final shipping state unless updated later)
+- ✅ All client feedback rounds (Changes/ folder screenshots) — addressed
+- ❌ WordPress + Elementor port — **cancelled**; the static site is the final deliverable
+- ✅ **Hero section animation video** — `Hero.mp4` + Story modal (`Platinum-30 Years_v18.mp4`). Commit `ab31d82`.
+- ✅ **Projects timeline** — all 41+2 projects have `year:` wired (client CSV + 2026 estimates for the two Waterloo Chipotles). Commits `b2a47ae`, `fc4902f`.
+
+**Project is ship-ready.** Remaining items are external: domain-switch decision (security hardening + SEO/GSC follow-up — see memory files).
 
 ## Conventions
 
