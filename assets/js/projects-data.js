@@ -7,6 +7,7 @@ window.PROJECTS = [
   { slug: "Bangkok Buri - Union Station, Toronto, ON", title: "Bangkok Buri", location: "Union Station, Toronto, ON", category: "restaurant", brand: "Bangkok Buri", images: 14, year: 2018, hasTour: false, tour: "#" },
   { slug: "Bombay Frankies - 320 Harwood Ave, Ajax, ON", title: "Bombay Frankies", location: "Ajax, ON", category: "restaurant", brand: "Bombay Frankies", images: 25, year: 2023, hasTour: false, tour: "#" },
   { slug: "Canna Cabana - 905 Rymal Rd, Hamilton, ON", title: "Canna Cabana", location: "Hamilton, ON", category: "retail", brand: "Canna Cabana", images: 25, year: 2021, hasTour: false, tour: "#" },
+  { slug: "Chipotle - 150 Silver Reign Dr, Etobicoke, ON", title: "Chipotle Mexican Grill", location: "Silver Reign Dr, Etobicoke, ON", category: "restaurant", brand: "Chipotle", images: 41, year: 2026, hasTour: false, tour: "#" },
   { slug: "Chipotle - 550 King St N, Waterloo, ON", title: "Chipotle Mexican Grill", location: "King St N, Waterloo, ON", category: "restaurant", brand: "Chipotle", images: 30, year: 2026, hasTour: false, tour: "#" },
   { slug: "Chipotle - 655 Erb St W, Waterloo, ON", title: "Chipotle Mexican Grill", location: "Erb St W, Waterloo, ON", category: "restaurant", brand: "Chipotle", images: 33, year: 2026, hasTour: false, tour: "#" },
   { slug: "Chipotle Mexican Grill 492 Edinburgh Rd. S. Guelph, ON", title: "Chipotle Mexican Grill", location: "Guelph, ON", category: "restaurant", brand: "Chipotle", images: 34, year: 2025, hasTour: true, tour: "#" },
