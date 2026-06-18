@@ -9,6 +9,10 @@
   // encodeURI leaves "#" unescaped (it's the fragment delimiter) — escape it for folder names like "Hwy#7"
   const urlPath = (slug) => encodeURI(slug).replace(/#/g, "%23");
   const itemId = (slug) => `project-${slug.replace(/[^a-z0-9]/gi, "-")}`;
+  // Bump when a project photo is *replaced* in place (same filename, new content)
+  // so browsers/CDN don't keep serving the cached old image. e.g. DQ Alliston cover.
+  const IMG_V = "2";
+  const img = (path) => `${path}?v=${IMG_V}`;
 
   const projects = window.PROJECTS;
   const cats = Array.from(new Set(projects.map(p => p.category)));
@@ -37,7 +41,7 @@
 
   const cardHTML = (p) => {
     const folder = urlPath(p.slug);
-    const cover = `projects/${folder}/image_0.jpg`;
+    const cover = img(`projects/${folder}/image_0.jpg`);
     return `
       <a href="#" class="portfolio-item" data-category="${p.category}" data-lightbox="${cover}" data-gallery="${itemId(p.slug)}">
         <div class="portfolio-thumb">
@@ -64,7 +68,7 @@
     const gid = itemId(p.slug);
     for (let i = 1; i < p.images; i++) {
       const a = document.createElement("a");
-      a.dataset.lightbox = `projects/${folder}/image_${i}.jpg`;
+      a.dataset.lightbox = img(`projects/${folder}/image_${i}.jpg`);
       a.dataset.gallery = gid;
       preload.appendChild(a);
     }
