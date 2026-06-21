@@ -33,6 +33,7 @@ window.PROJECTS = [
   { slug: "Simply Smart Child Care & Montessori - Courtice, ON", title: "Simply Smart Child Care", location: "Courtice, ON", category: "education", brand: "Simply Smart", images: 40, year: 2023, hasTour: true, tour: "#" },
   { slug: "Sola Salon -1900 W 18th St. Houston, TX, USA", title: "Sola Salon Studios", location: "Calgary, AB", category: "salon", brand: "Sola Salon", images: 19, year: 2018, hasTour: true, tour: "https://my.matterport.com/show/?m=ZkpKZxawnHd" },
   { slug: "Sola Salon Studios - 1181 11th Ave, Calgary, AB", title: "Sola Salon Studios", location: "Calgary, AB", category: "salon", brand: "Sola Salon", images: 24, year: 2020, hasTour: false, tour: "#" },
+  { slug: "Super 8 Hotel - Red Lake, ON", title: "Super 8 Hotel", location: "Red Lake, ON", category: "commercial", brand: "Super 8", images: 11, year: 2016, hasTour: false, tour: "#" },
   { slug: "Starbucks - 1177 Ritson Rd. Oshawa, ON", title: "Starbucks", location: "Ritson Rd, Oshawa, ON", category: "coffee", brand: "Starbucks", images: 41, year: 2024, hasTour: true, tour: "#" },
   { slug: "Starbucks - Markville Mall, Markham, ON", title: "Starbucks", location: "Markville Mall, Markham, ON", category: "coffee", brand: "Starbucks", images: 25, year: 2024, hasTour: false, tour: "#" },
   { slug: "Starbucks -4140 Garden St, Whitby, ON", title: "Starbucks", location: "Garden St, Whitby, ON", category: "coffee", brand: "Starbucks", images: 29, year: 2025, hasTour: true, tour: "#" },
