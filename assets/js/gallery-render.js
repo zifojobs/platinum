@@ -11,7 +11,7 @@
   const itemId = (slug) => `project-${slug.replace(/[^a-z0-9]/gi, "-")}`;
   // Bump when a project photo is *replaced* in place (same filename, new content)
   // so browsers/CDN don't keep serving the cached old image. e.g. DQ Alliston cover.
-  const IMG_V = "2";
+  const IMG_V = "3";
   const img = (path) => `${path}?v=${IMG_V}`;
 
   const projects = window.PROJECTS;
