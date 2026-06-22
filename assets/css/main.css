@@ -450,6 +450,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
     position: static;
     background: transparent;
     margin-left: auto;
+    flex-shrink: 0;
   }
   body { padding-left: 0; padding-top: 68px; }
 }
@@ -1112,10 +1113,10 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 .logo .logo-divider { display: none; }
 
 @media (max-width: 1024px) {
-  .logo { flex-direction: row; align-items: center; gap: 10px; }
+  .logo { flex-direction: row; align-items: center; gap: 8px; min-width: 0; flex-shrink: 1; }
   .logo .logo-ca,
-  .logo .logo-us { height: 34px; width: auto; max-width: 100%; object-fit: contain; }
-  .logo .logo-divider { width: 1px; height: 30px; margin: 0; }
+  .logo .logo-us { height: 28px; width: auto; max-width: 100%; min-width: 0; flex-shrink: 1; object-fit: contain; }
+  .logo .logo-divider { width: 1px; height: 24px; margin: 0; flex-shrink: 0; }
 }
 
 .footer-logo { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; flex-wrap: wrap; }
