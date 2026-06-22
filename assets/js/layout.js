@@ -22,7 +22,6 @@
     bottom.innerHTML = `
       ${cta ? "" : ""}
       <div class="header-social">${socialHTML}</div>
-      <div class="header-copyright">&copy; 2026 Platinum Construction of America, Inc. All rights reserved.</div>
     `;
     // move CTA inside bottom, above socials
     if (cta) {

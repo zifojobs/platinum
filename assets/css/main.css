@@ -309,17 +309,18 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
     align-items: center;
     height: 100%;
     justify-content: space-between;
-    gap: 36px;
+    gap: 28px;
   }
-  body.is-scrolled .logo { flex-direction: row; align-items: center; gap: 12px; }
-  body.is-scrolled .logo-divider { display: block; width: 1px; height: 38px; background: var(--color-border-light); margin: 0; }
+  body.is-scrolled .logo { flex-direction: row; align-items: center; gap: 10px; flex-shrink: 0; }
+  body.is-scrolled .logo-divider { display: block; width: 1px; height: 30px; background: var(--color-border-light); margin: 0; }
   body.is-scrolled .logo .logo-ca,
-  body.is-scrolled .logo .logo-us { height: 52px; width: auto; max-width: 100%; object-fit: contain; }
+  body.is-scrolled .logo .logo-us { height: 30px; width: auto; max-width: none; object-fit: contain; flex-shrink: 0; }
   body.is-scrolled .nav-desktop {
     flex-direction: row;
     flex: 1;
+    min-width: 0;
     justify-content: flex-end;
-    gap: 36px;
+    gap: 28px;
     width: auto;
   }
   body.is-scrolled .nav-desktop a {
@@ -1097,15 +1098,15 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 }
 
 /* ============ STACKED CA + US LOGOS ============ */
-.logo { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
+.logo { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .logo .logo-ca,
-.logo .logo-us { height: 104px; width: auto; display: block; max-width: 100%; object-fit: contain; }
+.logo .logo-us { width: 150px; max-width: none; height: auto; display: block; object-fit: contain; }
 .logo .logo-divider { display: none; }
 
 @media (max-width: 1024px) {
   .logo { flex-direction: row; align-items: center; gap: 10px; }
   .logo .logo-ca,
-  .logo .logo-us { height: 62px; width: auto; max-width: 100%; object-fit: contain; }
+  .logo .logo-us { height: 34px; width: auto; max-width: 100%; object-fit: contain; }
   .logo .logo-divider { width: 1px; height: 30px; margin: 0; }
 }
 
