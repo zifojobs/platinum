@@ -311,9 +311,10 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
     justify-content: space-between;
     gap: 36px;
   }
-  body.is-scrolled .logo-us,
-  body.is-scrolled .logo-divider { display: none; }
-  body.is-scrolled .logo img { height: 70px; }
+  body.is-scrolled .logo { flex-direction: row; align-items: center; gap: 12px; }
+  body.is-scrolled .logo-divider { display: block; width: 1px; height: 38px; background: var(--color-border-light); margin: 0; }
+  body.is-scrolled .logo .logo-ca,
+  body.is-scrolled .logo .logo-us { height: 52px; }
   body.is-scrolled .nav-desktop {
     flex-direction: row;
     flex: 1;
