@@ -407,12 +407,20 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 .nav-overlay-social { display: flex; gap: 14px; }
 .nav-overlay-social a {
   width: 44px; height: 44px;
-  border: 1px solid var(--color-border-dark);
+  border: 1px solid transparent;
   display: inline-flex; align-items: center; justify-content: center;
   color: #fff;
+  transition: transform 0.25s var(--ease), filter 0.25s var(--ease);
 }
-.nav-overlay-social a:hover { background: var(--color-accent); border-color: var(--color-accent); }
-.nav-overlay-social svg { width: 16px; height: 16px; fill: currentColor; }
+/* Official brand colours (order: Facebook, Instagram, X, LinkedIn) */
+.nav-overlay-social a:nth-child(1) { background: #1877F2; }            /* Facebook */
+.nav-overlay-social a:nth-child(2) {                                   /* Instagram */
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+.nav-overlay-social a:nth-child(3) { background: #000; border-color: rgba(255,255,255,0.35); } /* X */
+.nav-overlay-social a:nth-child(4) { background: #0A66C2; }            /* LinkedIn */
+.nav-overlay-social a:hover { transform: translateY(-2px); filter: brightness(1.12); }
+.nav-overlay-social svg { width: 18px; height: 18px; fill: #fff; }
 
 /* On mobile: sidebar becomes a slim top bar (fix: burger was inside transformed parent) */
 @media (max-width: 1024px) {
