@@ -893,10 +893,22 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   width: 54px; height: 54px; background: rgba(255,255,255,0.08); color: #fff;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display); font-size: 1.3rem;
-  transition: background 0.3s var(--ease);
+  transition: background 0.3s var(--ease); z-index: 2;
 }
 .lightbox-prev { left: 20px; } .lightbox-next { right: 20px; }
 .lightbox-prev:hover, .lightbox-next:hover { background: var(--color-accent); }
+.lightbox-close { z-index: 2; }
+.lightbox-counter {
+  position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+  z-index: 2; color: #fff; font-family: var(--font-display);
+  letter-spacing: 0.1em; font-size: 0.9rem; text-transform: uppercase;
+  background: rgba(0,0,0,0.5); padding: 7px 16px; border-radius: 2px;
+}
+@media (max-width: 768px) {
+  .lightbox-prev, .lightbox-next { width: 44px; height: 44px; }
+  .lightbox-prev { left: 10px; } .lightbox-next { right: 10px; }
+  .lightbox-counter { bottom: 14px; font-size: 0.8rem; }
+}
 
 /* =========================================================
    REVEAL ANIMATION

@@ -16,13 +16,13 @@ Platinum Construction Corporation has 27+ years of experience as a turnkey gener
 
 ## Pages
 
-- [Home](https://platinum-site.vercel.app/): Company overview, hero of recent builds, services teaser
-- [About](https://platinum-site.vercel.app/about): Company history, philosophy, leadership, 27-year track record
-- [Services](https://platinum-site.vercel.app/services): Detailed service offerings and the design-build process
-- [Gallery](https://platinum-site.vercel.app/gallery): Portfolio of completed projects with photos, filterable by category
-- [Virtual Tours](https://platinum-site.vercel.app/virtual-tours): 360° immersive tours of 15 completed builds
-- [Environmental Policy](https://platinum-site.vercel.app/environmental-policy): Commitments to sustainable, energy-efficient construction
-- [Contact](https://platinum-site.vercel.app/contact): Phone, email, Ontario office, US branch
+- [Home](https://www.platinumconstruction.com/): Company overview, hero of recent builds, services teaser
+- [About](https://www.platinumconstruction.com/about): Company history, philosophy, leadership, 27-year track record
+- [Services](https://www.platinumconstruction.com/services): Detailed service offerings and the design-build process
+- [Gallery](https://www.platinumconstruction.com/gallery): Portfolio of completed projects with photos, filterable by category
+- [Virtual Tours](https://www.platinumconstruction.com/virtual-tours): 360° immersive tours of 15 completed builds
+- [Environmental Policy](https://www.platinumconstruction.com/environmental-policy): Commitments to sustainable, energy-efficient construction
+- [Contact](https://www.platinumconstruction.com/contact): Phone, email, Ontario office, US branch
 
 ## Contact
 

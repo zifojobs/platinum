@@ -189,32 +189,24 @@
   const lightboxContent = lightbox ? lightbox.querySelector(".lightbox-content") : null;
   let currentGallery = [];
   let currentIndex = 0;
+  let lbPrev, lbNext, lbCounter;
 
-  function openLightbox(html) {
-    if (!lightbox) return;
-    lightboxContent.innerHTML = html + `
-      <button class="lightbox-close" aria-label="Close">&times;</button>
-      <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
-      <button class="lightbox-next" aria-label="Next">&#8250;</button>`;
-    lightbox.classList.add("open");
-    document.body.style.overflow = "hidden";
-    lightboxContent.querySelector(".lightbox-close").onclick = closeLightbox;
-    lightboxContent.querySelector(".lightbox-prev").onclick = () => navGallery(-1);
-    lightboxContent.querySelector(".lightbox-next").onclick = () => navGallery(1);
-  }
-  function closeLightbox() {
-    if (!lightbox) return;
-    lightbox.classList.remove("open");
-    lightboxContent.innerHTML = "";
-    document.body.style.overflow = "";
-  }
-  function navGallery(delta) {
-    if (!currentGallery.length) return;
-    currentIndex = (currentIndex + delta + currentGallery.length) % currentGallery.length;
-    const src = currentGallery[currentIndex];
-    openLightbox(`<img src="${src}" alt="">`);
-  }
   if (lightbox) {
+    // Chrome (arrows, close, counter) is anchored to the full-screen overlay,
+    // NOT to the image-sized .lightbox-content. This keeps the arrows fixed at
+    // the viewport edges so they never shift with each photo's dimensions
+    // (which made users miss the arrow and close the lightbox by accident).
+    lightbox.insertAdjacentHTML("beforeend",
+      '<button class="lightbox-close" aria-label="Close">&times;</button>' +
+      '<button class="lightbox-prev" aria-label="Previous">&#8249;</button>' +
+      '<button class="lightbox-next" aria-label="Next">&#8250;</button>' +
+      '<div class="lightbox-counter" aria-live="polite"></div>');
+    lbPrev = lightbox.querySelector(".lightbox-prev");
+    lbNext = lightbox.querySelector(".lightbox-next");
+    lbCounter = lightbox.querySelector(".lightbox-counter");
+    lightbox.querySelector(".lightbox-close").onclick = closeLightbox;
+    lbPrev.onclick = () => navGallery(-1);
+    lbNext.onclick = () => navGallery(1);
     lightbox.addEventListener("click", (e) => {
       if (e.target === lightbox) closeLightbox();
     });
@@ -224,6 +216,44 @@
       if (e.key === "ArrowRight") navGallery(1);
       if (e.key === "ArrowLeft") navGallery(-1);
     });
+  }
+
+  function updateChrome() {
+    const multi = currentGallery.length > 1;
+    lbPrev.style.display = multi ? "" : "none";
+    lbNext.style.display = multi ? "" : "none";
+    if (multi) {
+      lbCounter.textContent = (currentIndex + 1) + " of " + currentGallery.length;
+      lbCounter.style.display = "";
+    } else {
+      lbCounter.style.display = "none";
+    }
+  }
+  function showImage() {
+    lightboxContent.innerHTML = `<img src="${currentGallery[currentIndex]}" alt="">`;
+    updateChrome();
+    openPanel();
+  }
+  function openIframe(url) {
+    currentGallery = [];
+    lightboxContent.innerHTML = `<iframe src="${url}" allowfullscreen></iframe>`;
+    updateChrome();
+    openPanel();
+  }
+  function openPanel() {
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove("open");
+    lightboxContent.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+  function navGallery(delta) {
+    if (currentGallery.length < 2) return;
+    currentIndex = (currentIndex + delta + currentGallery.length) % currentGallery.length;
+    showImage();
   }
 
   /* Image gallery triggers */
@@ -239,7 +269,7 @@
         currentGallery = [el.dataset.lightbox];
         currentIndex = 0;
       }
-      openLightbox(`<img src="${el.dataset.lightbox}" alt="">`);
+      showImage();
     });
   });
 
@@ -252,8 +282,7 @@
         alert("Virtual tour link coming soon.");
         return;
       }
-      currentGallery = [];
-      openLightbox(`<iframe src="${url}" allowfullscreen></iframe>`);
+      openIframe(url);
     });
   });
 
