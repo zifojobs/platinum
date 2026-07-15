@@ -73,7 +73,7 @@
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a href="contact.html" class="btn btn-ghost header-cta" style="padding:14px 26px;font-size:.75rem;">Get a Quote <span class="arrow"></span></a>
+    <a href="contact.html" class="btn btn-ghost header-cta" style="padding:14px 26px;font-size:.75rem;font-weight:600;">Get a Quote <span class="arrow"></span></a>
     <button class="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -147,7 +147,7 @@
   <div class="container">
     <div class="split">
       <div class="split-image reveal">
-        <img src="projects/Chipotle- Markville Mall 5000 Hwy%237, Markham, ON/image_2.jpg" alt="Platinum Construction project — Chipotle, Markville Mall, Markham, ON" loading="lazy" style="object-position: 62% center;" />
+        <img src="projects/Chipotle- Markville Mall 5000 Hwy%237, Markham, ON/image_2.jpg" alt="Platinum Construction project: Chipotle, Markville Mall, Markham, ON" loading="lazy" style="object-position: 62% center;" />
       </div>
       <div class="reveal reveal-delay-1">
         <div class="eyebrow">About the company</div>
@@ -171,10 +171,10 @@
     <div class="section-header center reveal">
       <div class="eyebrow">30+ Years of Excellence</div>
       <h2 class="h-xl">Our story, in motion.</h2>
-      <p class="text-lead" style="margin:24px auto 0;color:var(--color-muted-dark);">Over three decades of building across Ontario — a journey of partnerships, craftsmanship and delivery.</p>
+      <p class="text-lead" style="margin:24px auto 0;color:var(--color-muted-dark);">Over three decades of building across Ontario: a journey of partnerships, craftsmanship and delivery.</p>
     </div>
     <button class="video-wrap reveal reveal-delay-1" id="storyTrigger" type="button" aria-label="Play our story video">
-      <img class="video-poster" src="story-poster.jpg" alt="Our story in motion — Platinum Construction" loading="lazy" />
+      <img class="video-poster" src="story-poster.jpg" alt="Our story in motion, Platinum Construction" loading="lazy" />
       <span class="video-play" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
       </span>
@@ -183,7 +183,14 @@
 </section>
 
 <!-- ============ SERVICES ============ -->
-<section class="services-section">
+<section class="services-section" style="padding-bottom:48px;">
+  <style>
+    /* Client request: heading on a single line (desktop only, mobile keeps default wrapping) */
+    @media (min-width: 1025px) {
+      .services-section .section-header { max-width: none; }
+      .services-section .section-header h2 { white-space: nowrap; font-size: min(calc((100vw - 400px) / 28), 2.8rem); }
+    }
+  </style>
   <div class="container">
     <div class="section-header reveal">
       <div class="eyebrow">What we build</div>
@@ -192,58 +199,58 @@
   </div>
   <div class="container">
     <div class="services-grid">
-      <a href="services.html" class="service-card reveal">
+      <a href="services/commercial-industrial-construction.html" class="service-card reveal">
         <div class="service-num">01 / Commercial</div>
         <h3 class="service-title">Commercial & Industrial Developments</h3>
         <p class="service-desc">Base-building construction, plazas and sitework for large-scale commercial and industrial projects.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
-      <a href="services.html" class="service-card reveal reveal-delay-1">
+      <a href="services/corporate-franchise-rollouts.html" class="service-card reveal reveal-delay-1">
         <div class="service-num">02 / Franchise</div>
         <h3 class="service-title">Corporate & Franchise Expansion</h3>
         <p class="service-desc">Chain rollouts for national brands including Starbucks, Tim Hortons, Chipotle, Firehouse Subs.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
-      <a href="services.html" class="service-card reveal reveal-delay-2">
+      <a href="services/hotel-turnkey-development.html" class="service-card reveal reveal-delay-2">
         <div class="service-num">03 / Hospitality</div>
         <h3 class="service-title">Hotel Turnkey Developments</h3>
-        <p class="service-desc">Full turnkey hotel construction — design, build, furnish, deliver, operational-ready.</p>
+        <p class="service-desc">Full turnkey hotel construction: design, build, furnish, deliver, operational-ready.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
-      <a href="services.html" class="service-card reveal">
+      <a href="services/salon-studio-construction.html" class="service-card reveal">
         <div class="service-num">04 / Wellness</div>
         <h3 class="service-title">Design-Build Salon Studios</h3>
-        <p class="service-desc">Custom salon studio build-outs such as Sola Salons — end-to-end design & build.</p>
+        <p class="service-desc">Custom salon studio build-outs such as Sola Salons: end-to-end design & build.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
-      <a href="services.html" class="service-card reveal reveal-delay-1">
+      <a href="services/commercial-kitchen-construction.html" class="service-card reveal reveal-delay-1">
         <div class="service-num">05 / Kitchens</div>
         <h3 class="service-title">Commercial Kitchens</h3>
         <p class="service-desc">Specialized commercial kitchen construction built to code and brand standards.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
-      <a href="services.html" class="service-card reveal reveal-delay-2">
+      <a href="services/custom-homes-renovations.html" class="service-card reveal reveal-delay-2">
         <div class="service-num">06 / Residential</div>
         <h3 class="service-title">Custom Homes & Renovations</h3>
         <p class="service-desc">Luxury custom homes, major additions, and high-end residential renovations.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
-      <a href="services.html" class="service-card reveal">
+      <a href="services/interior-leasehold-improvements.html" class="service-card reveal">
         <div class="service-num">07 / Interiors</div>
         <h3 class="service-title">Interior Leasehold Improvements</h3>
         <p class="service-desc">Tenant fit-outs and interior renovations for retail, office and hospitality tenants of all sizes.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
-      <a href="services.html" class="service-card reveal reveal-delay-1">
+      <a href="services/construction-project-management.html" class="service-card reveal reveal-delay-1">
         <div class="service-num">08 / PM</div>
         <h3 class="service-title">Project Management</h3>
-        <p class="service-desc">End-to-end PM — scheduling, budgeting, procurement, vendor coordination and quality control.</p>
+        <p class="service-desc">End-to-end PM: scheduling, budgeting, procurement, vendor coordination and quality control.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
-      <a href="services.html" class="service-card reveal reveal-delay-2">
+      <a href="services/design-build-construction.html" class="service-card reveal reveal-delay-2">
         <div class="service-num">09 / Design-Build</div>
         <h3 class="service-title">Design-Build Delivery</h3>
-        <p class="service-desc">Single-source responsibility — architecture, engineering and construction under one team, one contract.</p>
+        <p class="service-desc">Single-source responsibility: architecture, engineering and construction under one team, one contract.</p>
         <span class="service-arrow">Learn more <span class="arrow"></span></span>
       </a>
     </div>
@@ -251,10 +258,10 @@
 </section>
 
 <!-- ============ TESTIMONIAL ============ -->
-<section class="testimonial-section">
+<section class="testimonial-section" style="padding-top:60px;">
   <div class="container">
     <div class="testimonial reveal">
-      <p class="testimonial-quote">We are only as good as our clients. Partnering with great clients — and earning their trust through craftsmanship and delivery — is the key to our success.</p>
+      <p class="testimonial-quote">We are only as good as our clients. Partnering with great clients, and earning their trust through craftsmanship and delivery, is the key to our success.</p>
       <div class="testimonial-author">Gaetano Alaimo</div>
       <div class="testimonial-role">Founder, Platinum Construction Corporation</div>
     </div>
@@ -299,15 +306,15 @@
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html">Commercial Construction</a></li>
-          <li><a href="services.html">Franchise Rollouts</a></li>
-          <li><a href="services.html">Hotel Developments</a></li>
-          <li><a href="services.html">Salon Studios</a></li>
-          <li><a href="services.html">Commercial Kitchens</a></li>
-          <li><a href="services.html">Custom Homes</a></li>
-          <li><a href="services.html">Interior Leasehold Improvements</a></li>
-          <li><a href="services.html">Project Management</a></li>
-          <li><a href="services.html">Design-Build Delivery</a></li>
+          <li><a href="services/commercial-industrial-construction.html">Commercial Construction</a></li>
+          <li><a href="services/corporate-franchise-rollouts.html">Franchise Rollouts</a></li>
+          <li><a href="services/hotel-turnkey-development.html">Hotel Developments</a></li>
+          <li><a href="services/salon-studio-construction.html">Salon Studios</a></li>
+          <li><a href="services/commercial-kitchen-construction.html">Commercial Kitchens</a></li>
+          <li><a href="services/custom-homes-renovations.html">Custom Homes</a></li>
+          <li><a href="services/interior-leasehold-improvements.html">Interior Leasehold Improvements</a></li>
+          <li><a href="services/construction-project-management.html">Project Management</a></li>
+          <li><a href="services/design-build-construction.html">Design-Build Delivery</a></li>
         </ul>
       </div>
       <div class="footer-col footer-contact">
