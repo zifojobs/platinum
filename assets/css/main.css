@@ -95,9 +95,12 @@ h1, h2, h3, h4, h5 {
 
 section { padding: clamp(64px, 7vw, 100px) 0; position: relative; }
 
-.section-header { margin-bottom: clamp(32px, 4.5vw, 56px); max-width: 780px; }
+.section-header { margin-bottom: clamp(32px, 4.5vw, 56px); max-width: 1180px; }
 .section-header.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-header.center .eyebrow { justify-content: center; }
+/* Section titles: keep them on one line where they fit, and balance the
+   line break on the few that are too long to. */
+.section-header h2 { text-wrap: balance; }
 
 /* =========================================================
    BUTTONS
