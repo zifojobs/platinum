@@ -97,9 +97,9 @@ h1, h2, h3, h4, h5 {
 .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
 .container-sm { max-width: var(--container-sm); margin: 0 auto; padding: 0 var(--gutter); }
 
-section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
+section { padding: clamp(64px, 7vw, 100px) 0; position: relative; }
 
-.section-header { margin-bottom: clamp(40px, 6vw, 80px); max-width: 780px; }
+.section-header { margin-bottom: clamp(32px, 4.5vw, 56px); max-width: 780px; }
 .section-header.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-header.center .eyebrow { justify-content: center; }
 
@@ -219,8 +219,24 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   justify-content: center;
   padding: 12px 18px;
   font-size: 0.7rem;
+  white-space: nowrap;
+  gap: 10px;
 }
 .header-cta:hover { color: #fff; }
+
+.header-phone {
+  display: none;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+.header-phone:hover { color: var(--color-accent); }
 
 .header-social {
   display: grid;
@@ -334,11 +350,12 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   body.is-scrolled .nav-desktop a:hover,
   body.is-scrolled .nav-desktop a.active { padding-left: 0; }
   body.is-scrolled .header-bottom {
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 0;
     align-items: center;
-    gap: 0;
+    gap: 5px;
   }
+  body.is-scrolled .header-phone { display: block; }
   body.is-scrolled .header-social,
   body.is-scrolled .header-tagline,
   body.is-scrolled .header-copyright { display: none; }
@@ -739,7 +756,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 /* =========================================================
    TESTIMONIAL
    ========================================================= */
-.testimonial-section { background: var(--color-light-alt); color: var(--color-text-dark); padding: clamp(80px, 10vw, 140px) 0; }
+.testimonial-section { background: var(--color-light-alt); color: var(--color-text-dark); padding: clamp(72px, 7vw, 100px) 0; }
 .testimonial-section .testimonial-role { color: var(--color-muted-dark); }
 .testimonial { max-width: 900px; margin: 0 auto; text-align: center; }
 .testimonial-quote {
@@ -925,7 +942,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 .text-center { text-align: center; }
 .bg-dark { background: var(--color-bg); color: #fff; }
 .bg-light { background: var(--color-light); color: var(--color-text-dark); }
-.bg-light-alt { background: var(--color-light-alt); color: var(--color-text-dark); padding: clamp(70px, 10vw, 140px) 0; position: relative; }
+.bg-light-alt { background: var(--color-light-alt); color: var(--color-text-dark); padding: clamp(64px, 7vw, 100px) 0; position: relative; }
 
 .divider { width: 60px; height: 2px; background: var(--color-accent); margin: 24px 0; }
 .divider.center { margin-left: auto; margin-right: auto; }
@@ -986,7 +1003,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
 /* =========================================================
    VIDEO SECTION (30+ years — Platinum-30 Years_v18.mp4, click-to-play modal)
    ========================================================= */
-.video-section { background: var(--color-light); color: var(--color-text-dark); padding: clamp(80px, 10vw, 140px) 0; }
+.video-section { background: var(--color-light); color: var(--color-text-dark); padding: clamp(72px, 7vw, 100px) 0; }
 .video-section .text-lead { color: var(--color-muted-dark) !important; }
 .video-wrap {
   position: relative;
@@ -1115,7 +1132,7 @@ section { padding: clamp(70px, 10vw, 140px) 0; position: relative; }
   .footer-social { justify-content: center; }
   .footer-bottom { justify-content: center; text-align: center; }
   .stat-item { text-align: center; border-left: none !important; padding-left: 0 !important; }
-  section { padding: 70px 0; }
+  section { padding: 56px 0; }
 }
 
 /* ============ STACKED CA + US LOGOS ============ */
@@ -1149,7 +1166,7 @@ body.intro-active { overflow: hidden; }
   align-items: center; justify-content: center;
   background: #0a0a0a;
   opacity: 1;
-  transition: opacity 0.9s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: opacity 0.6s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 .intro-overlay.is-active { display: flex; }
 .intro-overlay.is-hidden { opacity: 0; pointer-events: none; }
@@ -1161,7 +1178,7 @@ body.intro-active { overflow: hidden; }
     repeating-linear-gradient(0deg, transparent 0, transparent 50px, rgba(255,255,255,0.025) 50px, rgba(255,255,255,0.025) 51px),
     repeating-linear-gradient(90deg, transparent 0, transparent 50px, rgba(255,255,255,0.025) 50px, rgba(255,255,255,0.025) 51px);
   opacity: 0;
-  animation: introBgIn 1.6s 0.1s ease forwards;
+  animation: introBgIn 0.8s ease forwards;
 }
 
 .intro-content {
@@ -1180,17 +1197,17 @@ body.intro-active { overflow: hidden; }
 .intro-logo {
   height: 130px; width: auto; object-fit: contain;
   opacity: 0; transform: translateY(20px);
-  animation: introLogoIn 1.2s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+  animation: introLogoIn 0.7s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
 }
-.intro-logo:nth-of-type(1) { animation-delay: 0.4s; }
-.intro-logo:nth-of-type(2) { animation-delay: 0.65s; }
+.intro-logo:nth-of-type(1) { animation-delay: 0.15s; }
+.intro-logo:nth-of-type(2) { animation-delay: 0.3s; }
 
 .intro-divider {
   display: block;
   width: 1px; height: 110px;
   background: var(--color-accent);
   opacity: 0; transform: scaleY(0); transform-origin: center;
-  animation: introDividerIn 0.9s 0.85s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
+  animation: introDividerIn 0.5s 0.45s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
 }
 
 .intro-tagline {
@@ -1201,7 +1218,7 @@ body.intro-active { overflow: hidden; }
   color: rgba(255,255,255,0.78);
   margin-bottom: 44px;
   opacity: 0;
-  animation: introFadeIn 1s 1.3s ease forwards;
+  animation: introFadeIn 0.6s 0.9s ease forwards;
 }
 .intro-tagline em {
   font-style: normal;
@@ -1223,7 +1240,7 @@ body.intro-active { overflow: hidden; }
   border-radius: 999px;
   opacity: 0;
   transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  animation: introFadeIn 1s 1.8s ease forwards;
+  animation: introFadeIn 0.5s 1.2s ease forwards;
 }
 .intro-skip:hover {
   background: var(--color-accent);

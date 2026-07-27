@@ -79,7 +79,7 @@
         document.body.classList.remove("intro-active");
         // Only unmute when dismissed by an actual user gesture (browser autoplay policy)
         if (fromGesture) setSoundState(true);
-        setTimeout(() => introOverlay.remove(), 1000);
+        setTimeout(() => introOverlay.remove(), 700);
       };
       const skipBtn = document.getElementById("introSkip");
       if (skipBtn) skipBtn.addEventListener("click", (e) => { e.stopPropagation(); dismiss(true); });
@@ -88,7 +88,7 @@
         if (e.key === "Escape" || e.key === "Enter") dismiss(true);
       });
       // Auto-dismiss safety net (no gesture — stays muted)
-      setTimeout(() => dismiss(false), 5500);
+      setTimeout(() => dismiss(false), 2400);
     }
   }
 

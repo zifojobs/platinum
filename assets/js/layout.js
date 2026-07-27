@@ -27,6 +27,12 @@
     if (cta) {
       cta.parentNode.removeChild(cta);
       bottom.insertBefore(cta, bottom.firstChild);
+      // Canada HQ number under the CTA
+      const phone = document.createElement("a");
+      phone.className = "header-phone";
+      phone.href = "tel:9057638119";
+      phone.textContent = "905-763-8119";
+      bottom.insertBefore(phone, cta.nextSibling);
     }
     // insert bottom before burger, or at end
     if (burger) header.insertBefore(bottom, burger);
