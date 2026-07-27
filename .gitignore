@@ -10,12 +10,18 @@ retour_client.docx
 # Internal-only freelancer docs (never push)
 quote.html
 Quote-*.pdf
+# Working notes: internal process, client contacts, cost figures. Public repo -> keep local.
+CLAUDE.md
 
-# Internal audit PDFs (client SEO team materials — reference only)
+# Internal audit PDFs + reports (client SEO team materials — reference only, NEVER push: contain credentials)
 Website_Audit_for_platinum.pdf
 Pages_Found_for_*.pdf
 Pages Found for*.pdf
-platinum construction Work Report*.pdf
+platinum construction Work Report*
+Report_Client_Changes.csv
+Rapport_Client_Changes_*.csv
+Changes in website.pdf
+SEO-review-service-pages.csv
 
 # Legacy / scratch files at repo root
 /1.mp4
