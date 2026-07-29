@@ -22,6 +22,8 @@ Report_Client_Changes.csv
 Rapport_Client_Changes_*.csv
 Changes in website.pdf
 SEO-review-service-pages.csv
+# Source article supplied by the SEO team (the published HTML is what ships)
+blog/*.docx
 
 # Legacy / scratch files at repo root
 /1.mp4
