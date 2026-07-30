@@ -133,10 +133,10 @@ section { padding: clamp(64px, 7vw, 100px) 0; position: relative; }
   letter-spacing: 0.25em;
   color: var(--color-accent);
   padding-bottom: 4px;
-  border-bottom: 1px solid var(--color-accent);
-  transition: gap 0.3s var(--ease);
+  border-bottom: 1px solid transparent;
+  transition: gap 0.3s var(--ease), border-color 0.3s var(--ease);
 }
-.btn-link:hover { gap: 20px; }
+.btn-link:hover { gap: 20px; border-bottom-color: var(--color-accent); }
 
 .btn .arrow { width: 18px; height: 1px; background: currentColor; position: relative; transition: width 0.3s var(--ease); }
 .btn .arrow::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); }
