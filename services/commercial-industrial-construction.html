@@ -28,9 +28,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
   <link rel="stylesheet" href="../assets/css/main.css?v=40" />
   <style>
-    .svc-included{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px;}
+    .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
+    .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
-    @media (max-width:900px){.svc-included{grid-template-columns:1fr;}.svc-projects{grid-template-columns:1fr;}}
+    @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/commercial-industrial-construction#service","name":"Commercial & Industrial Developments","serviceType":"Commercial & Industrial Developments","description":"Ground-up commercial and industrial construction across Canada and the US: plazas, base buildings and complete sitework, delivered to spec by Platinum.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/commercial-industrial-construction"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/commercial-industrial-construction#webpage","url":"https://www.platinumconstruction.com/services/commercial-industrial-construction","name":"Commercial & Industrial Construction Company in Canada","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Commercial & Industrial Developments","item":"https://www.platinumconstruction.com/services/commercial-industrial-construction"}]}]}</script>
 </head>
@@ -84,6 +85,7 @@
       <p class="text-lead" style="margin-top:24px;max-width:none;">Large-scale plazas, industrial facilities and base-building construction with complete sitework. One accountable team from excavation to handover.</p>
       <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">For more than 30 years, Platinum Construction has delivered ground-up commercial and industrial projects across Canada and the United States. We manage the full scope in house: site servicing, foundations, structure, envelope and interior finishes. Owners deal with a single partner from the first drawing to the final inspection, with clear budgets and a schedule that holds.</p>
     </div>
+    <img src="../assets/services/intro-01-commercial-industrial.webp" alt="Completed New Plaza Development with full sitework and parking, Courtice, Ontario" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>
 </section>
 
@@ -95,22 +97,27 @@
     </div>
     <div class="svc-included">
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/case/new-plaza-01-sitework.webp" alt="Asphalt paving during site servicing at the New Plaza Development, Courtice, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Site preparation & servicing</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Excavation, grading, utilities and municipal coordination to make the land build-ready.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/case/new-plaza-02-structure.webp" alt="Site grading beside the completed base building, New Plaza Development, Courtice, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Base-building construction</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Structure, envelope and core systems built to specification and ready for tenants.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/case/new-plaza-03-delivered.webp" alt="Delivered multi-unit retail plaza, New Plaza Development, Courtice, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Plaza & multi-unit retail</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">New retail plazas and multi-unit developments, from shell to tenant handover.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-commercial-industrial-construction-4.webp" alt="Large-format facade renovation at the Orangeville Nissan dealership, Mono, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Industrial facilities</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Warehouses, automotive and light-industrial buildings engineered for daily operations.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-commercial-industrial-construction-5.webp" alt="Tenant unit delivered inside Square One Shopping Centre, Edo Japan, Mississauga, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Landlord & tenant coordination</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">We align base-building work with tenant fit-out schedules to avoid costly delays.</p>
       </div>
@@ -148,7 +155,6 @@
 <section class="bg-light-alt">
   <div class="container">
     <div class="section-header center reveal">
-      <div class="eyebrow">Common questions</div>
       <h2 class="h-xl">Frequently asked questions.</h2>
     </div>
     <div style="max-width:900px;">

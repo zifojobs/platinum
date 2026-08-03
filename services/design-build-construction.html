@@ -28,9 +28,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
   <link rel="stylesheet" href="../assets/css/main.css?v=40" />
   <style>
-    .svc-included{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px;}
+    .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
+    .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
-    @media (max-width:900px){.svc-included{grid-template-columns:1fr;}.svc-projects{grid-template-columns:1fr;}}
+    @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/design-build-construction#service","name":"Design-Build Delivery","serviceType":"Design-Build Delivery","description":"Single-source design-build delivery: architecture, engineering and construction under one team and one contract, from concept to completion.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/design-build-construction"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/design-build-construction#webpage","url":"https://www.platinumconstruction.com/services/design-build-construction","name":"Design-Build Construction Delivery","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Design-Build Delivery","item":"https://www.platinumconstruction.com/services/design-build-construction"}]}]}</script>
 </head>
@@ -84,6 +85,7 @@
       <p class="text-lead" style="margin-top:24px;max-width:none;">Architecture, engineering and construction under a single contract: streamlined communication, shorter timelines and better cost control.</p>
       <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">Design-build puts designers and builders on the same team from day one. Constructability and cost are checked while the drawings are still being made, not discovered on site. For the owner it means one contract, one point of responsibility and a faster path from concept to completion.</p>
     </div>
+    <img src="../assets/services/intro-09-design-build.webp" alt="Mr Mikes Steakhouse delivered design-build in St Catharines, Ontario" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>
 </section>
 
@@ -95,22 +97,27 @@
     </div>
     <div class="svc-included">
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-design-build-construction-1.webp" alt="Goose Island Brewery, Toronto, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Single-source responsibility</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">One agreement covering design, engineering and construction.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-design-build-construction-2.webp" alt="Bangkok Buri at Union Station, Toronto, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Integrated design & costing</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Budgets validated at every design stage, before the drawings are final.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-design-build-construction-3.webp" alt="Wendys on Airport Road, Brampton, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Faster delivery</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Overlapping design and construction phases compress the overall schedule.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-design-build-construction-4.webp" alt="Starbucks on Ritson Road, Oshawa, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Permit management</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Applications and municipal coordination handled inside the same team.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-design-build-construction-5.webp" alt="Fresh Since 1999 at Sherway Gardens Mall, Etobicoke, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Concept-to-completion delivery</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">From feasibility and layout to occupancy, without handoffs between firms.</p>
       </div>
@@ -148,7 +155,6 @@
 <section class="bg-light-alt">
   <div class="container">
     <div class="section-header center reveal">
-      <div class="eyebrow">Common questions</div>
       <h2 class="h-xl">Frequently asked questions.</h2>
     </div>
     <div style="max-width:900px;">

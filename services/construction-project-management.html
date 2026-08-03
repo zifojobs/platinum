@@ -28,9 +28,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
   <link rel="stylesheet" href="../assets/css/main.css?v=40" />
   <style>
-    .svc-included{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:60px;}
+    .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
+    .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
-    @media (max-width:900px){.svc-included{grid-template-columns:1fr;}.svc-projects{grid-template-columns:1fr;}}
+    @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/construction-project-management#service","name":"Project Management","serviceType":"Project Management","description":"Owner's representative project management: scheduling, budgeting, procurement, vendor coordination and quality control from start to finish.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/construction-project-management"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/construction-project-management#webpage","url":"https://www.platinumconstruction.com/services/construction-project-management","name":"Construction Project Management Services","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Project Management","item":"https://www.platinumconstruction.com/services/construction-project-management"}]}]}</script>
 </head>
@@ -84,6 +85,7 @@
       <p class="text-lead" style="margin-top:24px;max-width:none;">End-to-end project management: scheduling, budgeting, procurement, vendor coordination and quality control, with you keeping the final say.</p>
       <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">Under a project management contract, Platinum acts as the owner's representative. We plan the schedule, run procurement, coordinate every vendor and report on cost and quality, while decision-making authority stays with you. It is the right structure for owners who want professional control of the build without handing over the keys.</p>
     </div>
+    <img src="../assets/services/intro-08-project-management.webp" alt="Completed classroom at the Hagersville School Child Care project, Hagersville, Ontario" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>
 </section>
 
@@ -95,22 +97,27 @@
     </div>
     <div class="svc-included">
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-construction-project-management-1.webp" alt="Simply Smart Child Care and Montessori, Courtice, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Scheduling & phasing</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">A realistic master schedule, tracked and reported week by week.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-construction-project-management-2.webp" alt="Completed interior handed over at the Hagersville School Child Care project, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Budget control</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Cost planning, tender analysis and change management with full transparency.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-construction-project-management-3.webp" alt="Walk-in refrigeration and equipment installed on schedule, Odd Burger, Whitby, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Procurement & tendering</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Trade and vendor selection run competitively on your behalf.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-construction-project-management-4.webp" alt="Finished classroom at the Hagersville School Child Care project, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Quality control</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Site supervision, inspections and deficiency management to closeout.</p>
       </div>
       <div class="reveal" style="padding:40px;background:#fff;border:1px solid var(--color-border-light);">
+        <img src="../assets/services/box-construction-project-management-5.webp" alt="Noodles and Company, Pickering, Ontario" loading="lazy" width="700" height="467" style="width:calc(100% + 80px);max-width:none;height:auto;margin:-40px -40px 24px;display:block;" />
         <h3 class="h-md" style="margin-bottom:14px;">Owner reporting</h3>
         <p style="color:var(--color-muted-dark);line-height:1.7;">Clear, regular reporting so every decision is made with current numbers.</p>
       </div>
@@ -148,7 +155,6 @@
 <section class="bg-light-alt">
   <div class="container">
     <div class="section-header center reveal">
-      <div class="eyebrow">Common questions</div>
       <h2 class="h-xl">Frequently asked questions.</h2>
     </div>
     <div style="max-width:900px;">
