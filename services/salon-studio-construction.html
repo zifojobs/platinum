@@ -31,6 +31,12 @@
     .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
     .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
+    .section-header.svc-intro{max-width:none;}
+    .svc-intro p{max-width:900px;margin-left:auto;margin-right:auto;}
+    /* Client request: intro heading on a single line, desktop only. */
+    @media (min-width:1025px){
+      .svc-intro h2{white-space:nowrap;font-size:min(calc((100vw - 120px)/20.9), 63.1px, 4.2rem);}
+    }
     @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/salon-studio-construction#service","name":"Design-Build Salon Studios","serviceType":"Design-Build Salon Studios","description":"Design-build salon studio construction for Sola Salons and wellness brands: branded, compliant and ready for franchisees, across Canada and the US.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/salon-studio-construction"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/salon-studio-construction#webpage","url":"https://www.platinumconstruction.com/services/salon-studio-construction","name":"Salon Studio Construction & Build-Outs","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Design-Build Salon Studios","item":"https://www.platinumconstruction.com/services/salon-studio-construction"}]}]}</script>
@@ -79,11 +85,10 @@
 
 <section class="bg-light">
   <div class="container">
-    <div class="section-header center reveal" style="max-width:900px;">
+    <div class="section-header center reveal svc-intro">
       <div class="eyebrow">Design-Build Salon Studios</div>
       <h2 class="h-xl">Studio build-outs, ready for franchisees.</h2>
-      <p class="text-lead" style="margin-top:24px;max-width:none;">Specialized build-outs for Sola Salons and other wellness brands: branded, code-compliant studio units delivered end to end.</p>
-      <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">Salon studio projects pack dozens of individually serviced units into one space, each with its own plumbing, electrical and ventilation requirements. Platinum has delivered these builds in both Canada and the United States, handling design, permits and construction so the operator can start leasing studios on schedule.</p>
+      <p style="margin-top:28px;color:var(--color-muted-dark);line-height:1.8;">Specialized build-outs for Sola Salons and other wellness brands: branded, code-compliant studio units delivered end to end. Salon studio projects pack dozens of individually serviced units into one space, each with its own plumbing, electrical and ventilation requirements. Platinum has delivered these builds in both Canada and the United States, handling design, permits and construction so the operator can start leasing studios on schedule.</p>
     </div>
     <img src="../assets/services/intro-04-salon-studios.webp" alt="Completed Sola Salon Studios corridor with individually signed studio units, Calgary, Alberta" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>

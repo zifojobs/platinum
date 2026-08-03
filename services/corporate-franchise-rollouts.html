@@ -31,6 +31,12 @@
     .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
     .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
+    .section-header.svc-intro{max-width:none;}
+    .svc-intro p{max-width:900px;margin-left:auto;margin-right:auto;}
+    /* Client request: intro heading on a single line, desktop only. */
+    @media (min-width:1025px){
+      .svc-intro h2{white-space:nowrap;font-size:min(calc((100vw - 120px)/21.4), 61.6px, 4.2rem);}
+    }
     @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/corporate-franchise-rollouts#service","name":"Corporate & Franchise Expansion","serviceType":"Corporate & Franchise Expansion","description":"Multi-unit franchise construction for national brands such as Starbucks, Tim Hortons and Chipotle: repeatable standards and predictable delivery across North America.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/corporate-franchise-rollouts"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/corporate-franchise-rollouts#webpage","url":"https://www.platinumconstruction.com/services/corporate-franchise-rollouts","name":"Franchise Rollout Contractor for National Brands","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Corporate & Franchise Expansion","item":"https://www.platinumconstruction.com/services/corporate-franchise-rollouts"}]}]}</script>
@@ -79,11 +85,10 @@
 
 <section class="bg-light">
   <div class="container">
-    <div class="section-header center reveal" style="max-width:900px;">
+    <div class="section-header center reveal svc-intro">
       <div class="eyebrow">Corporate & Franchise Expansion</div>
       <h2 class="h-xl">Chain expansion with repeatable standards.</h2>
-      <p class="text-lead" style="margin-top:24px;max-width:none;">Multi-unit rollout programs for national brands: centralized coordination, brand-standard compliance and predictable schedules, location after location.</p>
-      <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">Platinum has built for Starbucks, Tim Hortons, Chipotle, KFC, Dairy Queen, Firehouse Subs and many other national brands. Rollout construction rewards repetition: documented standards, proven trade partners and one coordination point that keeps every site on the same playbook. That is how a program of ten locations opens on time, not just the first one.</p>
+      <p style="margin-top:28px;color:var(--color-muted-dark);line-height:1.8;">Multi-unit rollout programs for national brands: centralized coordination, brand-standard compliance and predictable schedules, location after location. Platinum has built for Starbucks, Tim Hortons, Chipotle, KFC, Dairy Queen, Firehouse Subs and many other national brands. Rollout construction rewards repetition: documented standards, proven trade partners and one coordination point that keeps every site on the same playbook. That is how a program of ten locations opens on time, not just the first one.</p>
     </div>
     <img src="../assets/services/intro-02-franchise-rollouts.webp" alt="Dairy Queen Grill and Chill built to brand standard, Alliston, Ontario" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>

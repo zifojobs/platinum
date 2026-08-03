@@ -31,6 +31,12 @@
     .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
     .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
+    .section-header.svc-intro{max-width:none;}
+    .svc-intro p{max-width:900px;margin-left:auto;margin-right:auto;}
+    /* Client request: intro heading on a single line, desktop only. */
+    @media (min-width:1025px){
+      .svc-intro h2{white-space:nowrap;font-size:min(calc((100vw - 120px)/13.8), 95.9px, 4.2rem);}
+    }
     @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/interior-leasehold-improvements#service","name":"Interior Leasehold Improvements","serviceType":"Interior Leasehold Improvements","description":"Tenant fit-outs and interior renovations for retail, office and hospitality tenants: on schedule, on budget and landlord-compliant.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/interior-leasehold-improvements"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/interior-leasehold-improvements#webpage","url":"https://www.platinumconstruction.com/services/interior-leasehold-improvements","name":"Interior Leasehold Improvements Contractor","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Interior Leasehold Improvements","item":"https://www.platinumconstruction.com/services/interior-leasehold-improvements"}]}]}</script>
@@ -79,11 +85,10 @@
 
 <section class="bg-light">
   <div class="container">
-    <div class="section-header center reveal" style="max-width:900px;">
+    <div class="section-header center reveal svc-intro">
       <div class="eyebrow">Interior Leasehold Improvements</div>
       <h2 class="h-xl">Fit-outs that open on time.</h2>
-      <p class="text-lead" style="margin-top:24px;max-width:none;">Tenant fit-outs and interior renovations for retail, office and hospitality tenants of all sizes.</p>
-      <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">A leasehold improvement runs on two clocks: the landlord's rules and your opening date. Platinum has fitted out spaces in Ontario's busiest malls and streetfronts, from fashion retail to restaurants. We know the landlord criteria, the after-hours logistics and the inspection sequence, and we plan the job so fixturing and stock arrive on a finished floor.</p>
+      <p style="margin-top:28px;color:var(--color-muted-dark);line-height:1.8;">Tenant fit-outs and interior renovations for retail, office and hospitality tenants of all sizes. A leasehold improvement runs on two clocks: the landlord's rules and your opening date. Platinum has fitted out spaces in Ontario's busiest malls and streetfronts, from fashion retail to restaurants. We know the landlord criteria, the after-hours logistics and the inspection sequence, and we plan the job so fixturing and stock arrive on a finished floor.</p>
     </div>
     <img src="../assets/services/intro-07-interior-leasehold.webp" alt="Completed Indochino retail fit-out at Square One Shopping Centre, Mississauga, Ontario" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>

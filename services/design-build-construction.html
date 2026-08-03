@@ -31,6 +31,12 @@
     .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
     .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
+    .section-header.svc-intro{max-width:none;}
+    .svc-intro p{max-width:900px;margin-left:auto;margin-right:auto;}
+    /* Client request: intro heading on a single line, desktop only. */
+    @media (min-width:1025px){
+      .svc-intro h2{white-space:nowrap;font-size:min(calc((100vw - 120px)/11.7), 112.6px, 4.2rem);}
+    }
     @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/design-build-construction#service","name":"Design-Build Delivery","serviceType":"Design-Build Delivery","description":"Single-source design-build delivery: architecture, engineering and construction under one team and one contract, from concept to completion.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/design-build-construction"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/design-build-construction#webpage","url":"https://www.platinumconstruction.com/services/design-build-construction","name":"Design-Build Construction Delivery","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Design-Build Delivery","item":"https://www.platinumconstruction.com/services/design-build-construction"}]}]}</script>
@@ -79,11 +85,10 @@
 
 <section class="bg-light">
   <div class="container">
-    <div class="section-header center reveal" style="max-width:900px;">
+    <div class="section-header center reveal svc-intro">
       <div class="eyebrow">Design-Build Delivery</div>
       <h2 class="h-xl">One team. One contract.</h2>
-      <p class="text-lead" style="margin-top:24px;max-width:none;">Architecture, engineering and construction under a single contract: streamlined communication, shorter timelines and better cost control.</p>
-      <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">Design-build puts designers and builders on the same team from day one. Constructability and cost are checked while the drawings are still being made, not discovered on site. For the owner it means one contract, one point of responsibility and a faster path from concept to completion.</p>
+      <p style="margin-top:28px;color:var(--color-muted-dark);line-height:1.8;">Architecture, engineering and construction under a single contract: streamlined communication, shorter timelines and better cost control. Design-build puts designers and builders on the same team from day one. Constructability and cost are checked while the drawings are still being made, not discovered on site. For the owner it means one contract, one point of responsibility and a faster path from concept to completion.</p>
     </div>
     <img src="../assets/services/intro-09-design-build.webp" alt="Mr Mikes Steakhouse delivered design-build in St Catharines, Ontario" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>

@@ -31,6 +31,12 @@
     .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
     .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
+    .section-header.svc-intro{max-width:none;}
+    .svc-intro p{max-width:900px;margin-left:auto;margin-right:auto;}
+    /* Client request: intro heading on a single line, desktop only. */
+    @media (min-width:1025px){
+      .svc-intro h2{white-space:nowrap;font-size:min(calc((100vw - 120px)/20.9), 63.1px, 4.2rem);}
+    }
     @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/custom-homes-renovations#service","name":"Custom Homes & Renovations","serviceType":"Custom Homes & Renovations","description":"Luxury custom homes, major additions and high-end residential renovations, built with the same discipline as our commercial work.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/custom-homes-renovations"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/custom-homes-renovations#webpage","url":"https://www.platinumconstruction.com/services/custom-homes-renovations","name":"Custom Homes & High-End Renovations","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Custom Homes & Renovations","item":"https://www.platinumconstruction.com/services/custom-homes-renovations"}]}]}</script>
@@ -79,11 +85,10 @@
 
 <section class="bg-light">
   <div class="container">
-    <div class="section-header center reveal" style="max-width:900px;">
+    <div class="section-header center reveal svc-intro">
       <div class="eyebrow">Custom Homes & Renovations</div>
       <h2 class="h-xl">Commercial discipline, residential craft.</h2>
-      <p class="text-lead" style="margin-top:24px;max-width:none;">Luxury custom residences, major additions and high-end renovations, managed with the same rigour as our commercial projects.</p>
-      <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">Thirty years of commercial contracting changes how a house gets built. Fixed budgets, real schedules, professional trades and documented quality control are standard on our residential work, because they are standard on everything we build. From a full custom home to a major addition or a top-to-bottom renovation, one team carries the project from drawings to keys.</p>
+      <p style="margin-top:28px;color:var(--color-muted-dark);line-height:1.8;">Luxury custom residences, major additions and high-end renovations, managed with the same rigour as our commercial projects. Thirty years of commercial contracting changes how a house gets built. Fixed budgets, real schedules, professional trades and documented quality control are standard on our residential work, because they are standard on everything we build. From a full custom home to a major addition or a top-to-bottom renovation, one team carries the project from drawings to keys.</p>
     </div>
     <img src="../assets/services/intro-06-custom-homes.webp" alt="Millwork, tile and finish detail delivered by Platinum on the Pur and Simple project, Burlington, Ontario" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>

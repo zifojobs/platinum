@@ -31,6 +31,12 @@
     .svc-included{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;}
     .svc-included>div{flex:0 1 calc((100% - 80px)/3);min-width:0;overflow:hidden;}
     .svc-projects{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
+    .section-header.svc-intro{max-width:none;}
+    .svc-intro p{max-width:900px;margin-left:auto;margin-right:auto;}
+    /* Client request: intro heading on a single line, desktop only. */
+    @media (min-width:1025px){
+      .svc-intro h2{white-space:nowrap;font-size:min(calc((100vw - 120px)/17.8), 74.0px, 4.2rem);}
+    }
     @media (max-width:900px){.svc-included>div{flex:0 1 100%;}.svc-projects{grid-template-columns:1fr;}}
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://www.platinumconstruction.com/services/construction-project-management#service","name":"Project Management","serviceType":"Project Management","description":"Owner's representative project management: scheduling, budgeting, procurement, vendor coordination and quality control from start to finish.","provider":{"@id":"https://www.platinumconstruction.com/#organization"},"areaServed":[{"@type":"Country","name":"Canada"},{"@type":"Country","name":"United States"}],"url":"https://www.platinumconstruction.com/services/construction-project-management"},{"@type":"WebPage","@id":"https://www.platinumconstruction.com/services/construction-project-management#webpage","url":"https://www.platinumconstruction.com/services/construction-project-management","name":"Construction Project Management Services","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://www.platinumconstruction.com/services"},{"@type":"ListItem","position":3,"name":"Project Management","item":"https://www.platinumconstruction.com/services/construction-project-management"}]}]}</script>
@@ -79,11 +85,10 @@
 
 <section class="bg-light">
   <div class="container">
-    <div class="section-header center reveal" style="max-width:900px;">
+    <div class="section-header center reveal svc-intro">
       <div class="eyebrow">Project Management</div>
       <h2 class="h-xl">Your representative on the project.</h2>
-      <p class="text-lead" style="margin-top:24px;max-width:none;">End-to-end project management: scheduling, budgeting, procurement, vendor coordination and quality control, with you keeping the final say.</p>
-      <p style="margin-top:24px;color:var(--color-muted-dark);line-height:1.8;">Under a project management contract, Platinum acts as the owner's representative. We plan the schedule, run procurement, coordinate every vendor and report on cost and quality, while decision-making authority stays with you. It is the right structure for owners who want professional control of the build without handing over the keys.</p>
+      <p style="margin-top:28px;color:var(--color-muted-dark);line-height:1.8;">End-to-end project management: scheduling, budgeting, procurement, vendor coordination and quality control, with you keeping the final say. Under a project management contract, Platinum acts as the owner's representative. We plan the schedule, run procurement, coordinate every vendor and report on cost and quality, while decision-making authority stays with you. It is the right structure for owners who want professional control of the build without handing over the keys.</p>
     </div>
     <img src="../assets/services/intro-08-project-management.webp" alt="Completed classroom at the Hagersville School Child Care project, Hagersville, Ontario" loading="lazy" width="1600" height="800" class="reveal" style="width:100%;height:auto;margin-top:64px;display:block;" />
   </div>
