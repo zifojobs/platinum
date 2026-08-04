@@ -45,7 +45,7 @@
     return `
       <a href="#" class="portfolio-item" data-category="${p.category}" data-lightbox="${cover}" data-gallery="${itemId(p.slug)}">
         <div class="portfolio-thumb">
-          <img src="${cover}" alt="${p.title} — ${p.location}" loading="lazy" />
+          <img src="${cover}" alt="${p.title} commercial construction, ${p.location}, built by Platinum Construction Corporation" loading="lazy" />
         </div>
         <div class="portfolio-info">
           <div class="portfolio-category">${p.brand}</div>
