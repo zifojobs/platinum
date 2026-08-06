@@ -1669,6 +1669,159 @@ body.intro-active { overflow: hidden; }
   .article-cta { padding: 28px 24px; }
 }
 
+/* -------- Table of contents --------
+   Below 1200px: a collapsible card sitting above the article body.
+   From 1200px up: the container gains a left gutter and the card is pulled
+   into it as a sticky sidebar. The text column keeps its exact width either
+   way (720px minus gutters), so the reading measure never changes. */
+.article__toc {
+  margin-bottom: 40px;
+  border: 1px solid rgba(26,26,26,0.12);
+  background: var(--color-light-alt);
+}
+.article__toc-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 20px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  color: var(--color-text-dark);
+}
+.article__toc-caret {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+.article__toc.is-open .article__toc-caret { transform: rotate(180deg); }
+
+/* Sidebar-only label; the collapsed card uses its toggle button instead */
+.article__toc-title { display: none; }
+
+.article__toc-list {
+  display: none;
+  list-style: none;
+  padding: 0 20px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.article__toc.is-open .article__toc-list { display: block; }
+.article__toc-list li + li { margin-top: 10px; }
+.article__toc-list a {
+  color: rgba(26,26,26,0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.article__toc-list a:hover { color: var(--color-accent); }
+.article__toc-list a.is-active { color: var(--color-text-dark); font-weight: 600; }
+
+/* Fixed header clearance when jumping to a section */
+.article__body h2, .article__body h3 { scroll-margin-top: 110px; }
+
+/* Below the sidebar breakpoint the card pins itself under the header and the
+   list opens as an overlay, so expanding it never pushes the article down.
+   Header heights it clears: 90px top bar on desktop-scrolled, 68px on mobile. */
+@media (max-width: 1199px) {
+  .article__toc {
+    position: sticky;
+    top: 90px;
+    z-index: 90;
+    /* The breathing space above the card is part of the sticky element and
+       opaque, otherwise article text would scroll through the gap between
+       the header and the card. */
+    padding-top: 10px;
+    background: var(--color-light);
+    border: 0;
+  }
+  .article__toc-inner {
+    position: relative;
+    border: 1px solid rgba(26,26,26,0.12);
+    background: var(--color-light-alt);
+  }
+  .article__toc-list {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 16px 20px;
+    background: var(--color-light);
+    border: 1px solid rgba(26,26,26,0.12);
+    border-top: 0;
+    box-shadow: 0 14px 26px -14px rgba(0,0,0,0.3);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(26,26,26,0.2) transparent;
+  }
+}
+@media (max-width: 1024px) {
+  /* Mobile header is 68px; the 10px padding above keeps the card off it */
+  .article__toc { top: 68px; }
+  /* Header plus the pinned card itself, so a jumped-to heading does not
+     land underneath the sommaire */
+  .article__body h2, .article__body h3 { scroll-margin-top: 145px; }
+}
+
+@media (min-width: 1200px) {
+  .article .container {
+    position: relative;
+    max-width: 1040px;
+    padding-left: calc(320px + var(--gutter));
+  }
+  .article__toc {
+    position: absolute;
+    top: 0;
+    left: var(--gutter);
+    width: 260px;
+    height: 100%;
+    margin-bottom: 0;
+    border: 0;
+    background: none;
+  }
+  .article__toc-inner {
+    position: sticky;
+    top: 120px;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid rgba(26,26,26,0.12);
+    background: var(--color-light-alt);
+    /* Short data-toc labels keep the list inside the viewport, so this never
+       scrolls in practice. Kept as a safety net for a longer future article,
+       styled down so it can never look like a native scrollbar again. */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(26,26,26,0.2) transparent;
+  }
+  .article__toc-inner::-webkit-scrollbar { width: 4px; }
+  .article__toc-inner::-webkit-scrollbar-track { background: transparent; }
+  .article__toc-inner::-webkit-scrollbar-thumb { background: rgba(26,26,26,0.2); }
+  .article__toc-toggle { display: none; }
+  .article__toc-list { display: block; padding: 0; }
+  .article__toc-title {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    color: rgba(26,26,26,0.55);
+    margin-bottom: 16px;
+  }
+}
+
 /* =========================================================
    CLIENT BRANDS — Infinite marquee carousel
    ========================================================= */

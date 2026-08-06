@@ -345,6 +345,71 @@
     }, { passive: true });
   }
 
+  /* -------- Article table of contents (blog posts only) --------
+     One entry per h2 that carries an id, labelled with the heading's own text.
+     Headings without an id are skipped, so the markup decides what appears —
+     not this file. That is how the FAQ questions stay out of the list while
+     keeping their ids, and therefore their anchors. */
+  const toc = document.querySelector(".article__toc");
+  if (toc) {
+    const articleBody = document.querySelector(".article__body");
+    const tocList = toc.querySelector(".article__toc-list");
+    const headings = articleBody
+      ? Array.from(articleBody.querySelectorAll("h2[id]"))
+      : [];
+
+    if (headings.length < 2) {
+      toc.remove();
+    } else {
+      const links = [];
+
+      headings.forEach(heading => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#" + heading.id;
+        a.textContent = heading.textContent.trim();
+        li.appendChild(a);
+        links.push({ link: a, heading: heading });
+        tocList.appendChild(li);
+      });
+
+      /* Collapsible card (below 1200px — above that the CSS keeps it open) */
+      const toggle = toc.querySelector(".article__toc-toggle");
+      if (toggle) {
+        toggle.addEventListener("click", () => {
+          const open = toc.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+      }
+      /* Tapping an entry on mobile closes the card so the reader sees the text */
+      tocList.addEventListener("click", e => {
+        if (e.target.tagName === "A" && window.innerWidth < 1200) {
+          toc.classList.remove("is-open");
+          if (toggle) toggle.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      /* Highlight the section being read: the last heading scrolled past */
+      let ticking = false;
+      const setActive = () => {
+        ticking = false;
+        let current = links[0];
+        links.forEach(item => {
+          if (item.heading.getBoundingClientRect().top <= 140) current = item;
+        });
+        links.forEach(item => {
+          item.link.classList.toggle("is-active", item === current);
+        });
+      };
+      window.addEventListener("scroll", () => {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(setActive);
+      }, { passive: true });
+      setActive();
+    }
+  }
+
   /* -------- Current year in footer (legacy, only updates <span data-year>) -------- */
   const yearEl = document.querySelector("span[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
