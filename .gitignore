@@ -43,3 +43,5 @@ Hero_Video/
 
 # Raw/unprocessed project photo sources (only the numbered image_N.jpg sets ship)
 projects/* (raw)/
+.vercel
+.env*
