@@ -24,6 +24,9 @@ Changes in website.pdf
 SEO-review-service-pages.csv
 # Source article supplied by the SEO team (the published HTML is what ships)
 blog/*.docx
+# Source delivery folders: the Word file plus the full-resolution banners (tens of MB).
+# Only the resized WebP/JPEG in blog/ ship. Public repo -> keep the sources local.
+blog/Article */
 
 # Legacy / scratch files at repo root
 /1.mp4
