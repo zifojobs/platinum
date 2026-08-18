@@ -349,7 +349,7 @@ section { padding: clamp(64px, 7vw, 100px) 0; position: relative; }
     flex: 1;
     min-width: 0;
     justify-content: center;
-    gap: 28px;
+    gap: 16px;
     width: auto;
   }
   body.is-scrolled .nav-desktop a {

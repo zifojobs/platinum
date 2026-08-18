@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Tag Manager -->
+  <script async src="assets/js/gtm.js?v=1"></script>
+  <title>Commercial Construction Videos in Canada | Platinum Construction</title>
+  <meta name="description" content="Watch Platinum Construction on site: project walkthroughs, franchise rollouts and behind-the-scenes commercial construction across Canada and the United States." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://www.platinumconstruction.com/videos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Platinum Construction Corporation" />
+  <meta property="og:title" content="Commercial Construction Videos in Canada | Platinum Construction" />
+  <meta property="og:description" content="Watch Platinum Construction on site: project walkthroughs, franchise rollouts and behind-the-scenes commercial construction across Canada and the United States." />
+  <meta property="og:url" content="https://www.platinumconstruction.com/videos" />
+  <meta property="og:image" content="https://www.platinumconstruction.com/og-image.jpg" />
+  <meta property="og:locale" content="en_CA" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@platinumconst1" />
+  <meta name="twitter:title" content="Commercial Construction Videos in Canada | Platinum Construction" />
+  <meta name="twitter:description" content="Watch Platinum Construction on site: project walkthroughs, franchise rollouts and behind-the-scenes commercial construction across Canada and the United States." />
+  <meta name="twitter:image" content="https://www.platinumconstruction.com/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+  <meta name="google-site-verification" content="5DxKbl8P6LLfUzy5PgN2GffcdyU3mWMJC97-5wrd3tE" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/main.css?v=46" />
+  <style>
+    /* Page-scoped: everything below is used by this page only, so it stays out
+       of main.css and out of every other page's stylesheet download. */
+    .video-section + .video-section { padding-top: 0; }
+    .video-grid { display: grid; gap: 32px 26px; }
+    .video-grid--films { grid-template-columns: repeat(2, 1fr); }
+    .video-grid--shorts { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+
+    .video-card { display: flex; flex-direction: column; }
+    .video-thumb {
+      position: relative;
+      overflow: hidden;
+      background: #111;
+      border: 1px solid var(--color-border-light, #e3e3e3);
+    }
+    .video-grid--films .video-thumb { aspect-ratio: 16 / 9; }
+    .video-grid--shorts .video-thumb { aspect-ratio: 9 / 16; }
+    .video-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.6s var(--ease, cubic-bezier(0.65, 0.05, 0.36, 1));
+    }
+    .video-thumb iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .video-card:hover .video-thumb img { transform: scale(1.04); }
+
+    .video-play {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; height: 100%;
+      padding: 0; border: 0; cursor: pointer;
+      background: rgba(0, 0, 0, 0.18);
+      transition: background 0.4s var(--ease, cubic-bezier(0.65, 0.05, 0.36, 1));
+    }
+    .video-play:hover { background: rgba(0, 0, 0, 0.34); }
+    .video-play span {
+      display: block;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.94);
+      position: relative;
+      transition: transform 0.4s var(--ease, cubic-bezier(0.65, 0.05, 0.36, 1));
+    }
+    .video-play:hover span { transform: scale(1.08); }
+    .video-play span::after {
+      content: "";
+      position: absolute; top: 50%; left: 54%;
+      transform: translate(-50%, -50%);
+      border-style: solid;
+      border-width: 10px 0 10px 17px;
+      border-color: transparent transparent transparent #2d2d2d;
+    }
+    .video-play:focus-visible { outline: 2px solid var(--color-accent, #8c8c8c); outline-offset: -4px; }
+
+    .video-meta { padding: 18px 2px 0; }
+    .video-title {
+      font-family: var(--font-display, "Oswald", sans-serif);
+      font-size: 1rem;
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-text-dark, #2d2d2d);
+    }
+    .video-grid--shorts .video-title { font-size: 0.86rem; letter-spacing: 0.05em; }
+    .video-sub {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #6b6b6b;
+    }
+    .video-channel {
+      margin-top: 46px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .video-grid--films { grid-template-columns: 1fr; }
+      .video-grid--shorts { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .video-grid { gap: 26px 16px; }
+      .video-grid--shorts { grid-template-columns: repeat(2, 1fr); }
+      .video-play span { width: 50px; height: 50px; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.platinumconstruction.com/videos#webpage","url":"https://www.platinumconstruction.com/videos","name":"Commercial Construction Videos in Canada | Platinum Construction","isPartOf":{"@id":"https://www.platinumconstruction.com/#website"},"about":{"@id":"https://www.platinumconstruction.com/#organization"},"inLanguage":"en-CA"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.platinumconstruction.com/"},{"@type":"ListItem","position":2,"name":"Videos","item":"https://www.platinumconstruction.com/videos"}]},{"@type":"ItemList","name":"Platinum Construction videos","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"VideoObject","name":"Starbucks Construction Project | From Empty Space to Grand Opening","description":"A Starbucks build taken from an empty space through to grand opening by Platinum Construction.","uploadDate":"2026-08-02","thumbnailUrl":"https://www.platinumconstruction.com/videos/thumbs/khzMrXsxcac.jpg","embedUrl":"https://www.youtube-nocookie.com/embed/khzMrXsxcac","contentUrl":"https://www.youtube.com/watch?v=khzMrXsxcac","publisher":{"@id":"https://www.platinumconstruction.com/#organization"}}},{"@type":"ListItem","position":2,"item":{"@type":"VideoObject","name":"The Story Behind Platinum Construction","description":"The story behind Platinum Construction, from Italian immigrant beginnings to a Canadian commercial construction company.","uploadDate":"2026-08-01","thumbnailUrl":"https://www.platinumconstruction.com/videos/thumbs/BRhGWbBboS0.jpg","embedUrl":"https://www.youtube-nocookie.com/embed/BRhGWbBboS0","contentUrl":"https://www.youtube.com/watch?v=BRhGWbBboS0","publisher":{"@id":"https://www.platinumconstruction.com/#organization"}}},{"@type":"ListItem","position":3,"item":{"@type":"VideoObject","name":"How He Built 60 Locations For One Single Franchise Brand","description":"How Platinum Construction delivered 60 locations for a single franchise brand.","uploadDate":"2026-08-12","thumbnailUrl":"https://www.platinumconstruction.com/videos/thumbs/rl59hKH7sNo.jpg","embedUrl":"https://www.youtube-nocookie.com/embed/rl59hKH7sNo","contentUrl":"https://www.youtube.com/watch?v=rl59hKH7sNo","publisher":{"@id":"https://www.platinumconstruction.com/#organization"}}},{"@type":"ListItem","position":4,"item":{"@type":"VideoObject","name":"Why Canadian Businesses Are Secretly Losing Millions To US Companies","description":"Why Canadian businesses lose money to US companies, and what changes it.","uploadDate":"2026-08-11","thumbnailUrl":"https://www.platinumconstruction.com/videos/thumbs/z_sQ0H7Gko0.jpg","embedUrl":"https://www.youtube-nocookie.com/embed/z_sQ0H7Gko0","contentUrl":"https://www.youtube.com/watch?v=z_sQ0H7Gko0","publisher":{"@id":"https://www.platinumconstruction.com/#organization"}}},{"@type":"ListItem","position":5,"item":{"@type":"VideoObject","name":"Contractor Selection Mistake Hiring Managers Make","description":"The contractor selection mistake hiring managers make on commercial construction projects.","uploadDate":"2026-08-09","thumbnailUrl":"https://www.platinumconstruction.com/videos/thumbs/w2irgV3vO-Y.jpg","embedUrl":"https://www.youtube-nocookie.com/embed/w2irgV3vO-Y","contentUrl":"https://www.youtube.com/watch?v=w2irgV3vO-Y","publisher":{"@id":"https://www.platinumconstruction.com/#organization"}}},{"@type":"ListItem","position":6,"item":{"@type":"VideoObject","name":"Inside Commercial Construction: Plumbing, Electrical & HVAC Prep","description":"Inside a commercial construction site during plumbing, electrical and HVAC preparation.","uploadDate":"2026-08-08","thumbnailUrl":"https://www.platinumconstruction.com/videos/thumbs/7L1zBd6ERNo.jpg","embedUrl":"https://www.youtube-nocookie.com/embed/7L1zBd6ERNo","contentUrl":"https://www.youtube.com/watch?v=7L1zBd6ERNo","publisher":{"@id":"https://www.platinumconstruction.com/#organization"}}},{"@type":"ListItem","position":7,"item":{"@type":"VideoObject","name":"Why Global Franchises Only Trust Experienced Commercial Contractors","description":"Why global franchise brands work with experienced commercial contractors.","uploadDate":"2026-08-01","thumbnailUrl":"https://www.platinumconstruction.com/videos/thumbs/BTGQAA7KXeA.jpg","embedUrl":"https://www.youtube-nocookie.com/embed/BTGQAA7KXeA","contentUrl":"https://www.youtube.com/watch?v=BTGQAA7KXeA","publisher":{"@id":"https://www.platinumconstruction.com/#organization"}}},{"@type":"ListItem","position":8,"item":{"@type":"VideoObject","name":"Behind the Scenes at Platinum Construction","description":"Behind the scenes of professional commercial construction operations at Platinum Construction.","uploadDate":"2026-07-25","thumbnailUrl":"https://www.platinumconstruction.com/videos/thumbs/8hVjKdftMZE.jpg","embedUrl":"https://www.youtube-nocookie.com/embed/8hVjKdftMZE","contentUrl":"https://www.youtube.com/watch?v=8hVjKdftMZE","publisher":{"@id":"https://www.platinumconstruction.com/#organization"}}}]}]}</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNQ6KGSP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header class="site-header light-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><img src="canada-logo.svg" alt="Platinum Construction Corporation" class="logo-ca" /><span class="logo-divider"></span><img src="us-logo.svg" alt="Platinum Construction of America, Inc." class="logo-us" /></a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="videos.html" class="active">Videos</a>
+      <a href="virtual-tours.html">Virtual Tours</a>
+      <a href="environmental-policy.html">Environmental Policy</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-ghost header-cta">Get a Quote <span class="arrow"></span></a>
+    <button class="burger"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="nav-overlay">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="virtual-tours.html">Virtual Tours</a></li>
+    <li><a href="environmental-policy.html">Environmental Policy</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('videos/thumbs/khzMrXsxcac.jpg');"></div>
+  <div class="container page-hero-content">
+    <div class="eyebrow">Video</div>
+    <h1>See the work in motion.</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span>Videos</div>
+  </div>
+</section>
+
+<section class="portfolio-section video-section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Featured</div>
+      <h2 class="h-xl">Projects and people behind the build.</h2>
+    </div>
+
+    <div class="video-grid video-grid--films">
+      <div class="video-card" data-video="khzMrXsxcac">
+        <div class="video-thumb">
+          <img src="videos/thumbs/khzMrXsxcac.jpg" alt="Starbucks construction project by Platinum Construction, from empty space to grand opening" width="1280" height="720" loading="lazy" />
+          <button class="video-play" type="button" aria-label="Play video: Starbucks Construction Project, From Empty Space to Grand Opening"><span></span></button>
+        </div>
+        <div class="video-meta">
+          <div class="video-title">Starbucks Construction Project</div>
+          <p class="video-sub">From an empty space to grand opening.</p>
+        </div>
+      </div>
+
+      <div class="video-card" data-video="BRhGWbBboS0">
+        <div class="video-thumb">
+          <img src="videos/thumbs/BRhGWbBboS0.jpg" alt="The story behind Platinum Construction, a Canadian commercial construction company" width="1280" height="720" loading="lazy" />
+          <button class="video-play" type="button" aria-label="Play video: The Story Behind Platinum Construction"><span></span></button>
+        </div>
+        <div class="video-meta">
+          <div class="video-title">The Story Behind Platinum Construction</div>
+          <p class="video-sub">From Italian immigrant to Canadian construction success.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio-section video-section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Short takes</div>
+      <h2 class="h-xl">Lessons from the site, in a minute.</h2>
+    </div>
+
+    <div class="video-grid video-grid--shorts">
+      <div class="video-card" data-video="rl59hKH7sNo">
+        <div class="video-thumb">
+          <img src="videos/thumbs/rl59hKH7sNo.jpg" alt="Platinum Construction on building 60 locations for one franchise brand" width="405" height="720" loading="lazy" />
+          <button class="video-play" type="button" aria-label="Play video: How He Built 60 Locations For One Single Franchise Brand"><span></span></button>
+        </div>
+        <div class="video-meta">
+          <div class="video-title">How He Built 60 Locations For One Franchise Brand</div>
+        </div>
+      </div>
+
+      <div class="video-card" data-video="z_sQ0H7Gko0">
+        <div class="video-thumb">
+          <img src="videos/thumbs/z_sQ0H7Gko0.jpg" alt="Platinum Construction on Canadian businesses losing millions to US companies" width="405" height="720" loading="lazy" />
+          <button class="video-play" type="button" aria-label="Play video: Why Canadian Businesses Are Secretly Losing Millions To US Companies"><span></span></button>
+        </div>
+        <div class="video-meta">
+          <div class="video-title">Why Canadian Businesses Are Losing Millions To US Companies</div>
+        </div>
+      </div>
+
+      <div class="video-card" data-video="w2irgV3vO-Y">
+        <div class="video-thumb">
+          <img src="videos/thumbs/w2irgV3vO-Y.jpg" alt="Platinum Construction on the contractor selection mistake hiring managers make" width="405" height="720" loading="lazy" />
+          <button class="video-play" type="button" aria-label="Play video: Contractor Selection Mistake Hiring Managers Make"><span></span></button>
+        </div>
+        <div class="video-meta">
+          <div class="video-title">The Contractor Selection Mistake Hiring Managers Make</div>
+        </div>
+      </div>
+
+      <div class="video-card" data-video="7L1zBd6ERNo">
+        <div class="video-thumb">
+          <img src="videos/thumbs/7L1zBd6ERNo.jpg" alt="Inside a commercial construction site during plumbing, electrical and HVAC preparation" width="405" height="720" loading="lazy" />
+          <button class="video-play" type="button" aria-label="Play video: Inside Commercial Construction, Plumbing, Electrical and HVAC Prep"><span></span></button>
+        </div>
+        <div class="video-meta">
+          <div class="video-title">Inside Commercial Construction: Plumbing, Electrical &amp; HVAC Prep</div>
+        </div>
+      </div>
+
+      <div class="video-card" data-video="BTGQAA7KXeA">
+        <div class="video-thumb">
+          <img src="videos/thumbs/BTGQAA7KXeA.jpg" alt="Platinum Construction on why global franchises trust experienced commercial contractors" width="405" height="720" loading="lazy" />
+          <button class="video-play" type="button" aria-label="Play video: Why Global Franchises Only Trust Experienced Commercial Contractors"><span></span></button>
+        </div>
+        <div class="video-meta">
+          <div class="video-title">Why Global Franchises Only Trust Experienced Contractors</div>
+        </div>
+      </div>
+
+      <div class="video-card" data-video="8hVjKdftMZE">
+        <div class="video-thumb">
+          <img src="videos/thumbs/8hVjKdftMZE.jpg" alt="Behind the scenes of commercial construction operations at Platinum Construction" width="405" height="720" loading="lazy" />
+          <button class="video-play" type="button" aria-label="Play video: Behind the Scenes at Platinum Construction"><span></span></button>
+        </div>
+        <div class="video-meta">
+          <div class="video-title">Behind the Scenes at Platinum Construction</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-channel reveal">
+      <a href="https://www.youtube.com/@PlatinumConstruction19/videos" class="btn btn-ghost" target="_blank" rel="noopener">Watch more on YouTube <span class="arrow"></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2 class="reveal">Ready to build something worth filming?</h2>
+    <a href="contact.html" class="btn reveal reveal-delay-1">Start a Project <span class="arrow"></span></a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-col">
+        <div class="footer-logo"><img src="canada-logo.png?v=2" alt="Platinum Construction" class="footer-logo-ca" /><span class="footer-logo-divider"></span><img src="us-logo.png?v=2" alt="Platinum Construction of America" class="footer-logo-us" /></div>
+        <p class="footer-about">Platinum Construction Corporation &amp; Platinum Construction of America Inc. are trusted general contracting firms specializing in commercial, industrial, hospitality, retail, and custom residential developments across North America, delivering high-quality turnkey solutions backed by more than 30 years of experience.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/people/Platinum-Construction-Corporation/100064126741481/" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12c0-5.5-4.5-10-10-10z"/></svg></a>
+          <a href="https://www.instagram.com/platinum_construction_corp/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.9.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.9.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.9-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.9-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 5.3c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5zm0 7.5c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3zm4.7-7.7c-.6 0-1-.5-1-1s.5-1 1-1 1 .5 1 1-.5 1-1 1z"/></svg></a>
+          <a href="https://mobile.twitter.com/platinumconst1" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://www.linkedin.com/company/platinum-construction-corporation" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17C2.7 2 2 2.7 2 3.5v17c0 .8.7 1.5 1.5 1.5h17c.8 0 1.5-.7 1.5-1.5v-17c0-.8-.7-1.5-1.5-1.5zM8 18.5H5V10h3v8.5zM6.5 8.3c-1 0-1.7-.8-1.7-1.7S5.5 5 6.5 5s1.7.8 1.7 1.7-.8 1.6-1.7 1.6zM19 18.5h-3v-4.4c0-1.1 0-2.4-1.5-2.4s-1.7 1.2-1.7 2.4v4.5h-3V10h2.9v1.3c.4-.8 1.4-1.5 2.8-1.5 3 0 3.5 2 3.5 4.5v4.2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="videos.html">Videos</a></li><li><a href="virtual-tours.html">Virtual Tours</a></li><li><a href="environmental-policy.html">Environmental Policy</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services/commercial-industrial-construction.html">Commercial Construction</a></li><li><a href="services/corporate-franchise-rollouts.html">Franchise Rollouts</a></li><li><a href="services/hotel-turnkey-development.html">Hotel Developments</a></li><li><a href="services/salon-studio-construction.html">Salon Studios</a></li><li><a href="services/commercial-kitchen-construction.html">Commercial Kitchens</a></li><li><a href="services/custom-homes-renovations.html">Custom Homes</a></li><li><a href="services/interior-leasehold-improvements.html">Interior Leasehold Improvements</a></li><li><a href="services/construction-project-management.html">Project Management</a></li><li><a href="services/design-build-construction.html">Design-Build Delivery</a></li></ul></div>
+      <div class="footer-col footer-contact"><h4>Contact</h4><p><strong>Canada</strong>83 Citation Dr. Unit 2<br />Vaughan, ON L4K 2Z6<br /><a href="tel:9057638119">905-763-8119</a><br /><a href="tel:18557638119">1-855-763-8119</a></p><p><strong>United States</strong>1441 Broadway, Suite 6178<br />New York, NY 10018<br /><a href="tel:9177930462">917-793-0462</a><br /><a href="tel:18557638119">1-855-763-8119</a></p><p><strong>Email</strong><a href="mailto:info&#64;platinumconstruction&#46;com">info&#64;platinumconstruction&#46;com</a></p></div>
+    </div>
+    <div class="footer-bottom"><div>&copy; 2026 Platinum Construction of America, Inc. All rights reserved.</div><div class="footer-legal"><a href="privacy-policy.html" style="text-decoration:underline;text-underline-offset:3px;">Privacy Policy</a></div></div>
+  </div>
+</footer>
+
+<script src="assets/js/videos.js?v=1"></script>
+<script src="assets/js/layout.js?v=11"></script>
+<script src="assets/js/main.js?v=10"></script>
+</body>
+</html>
