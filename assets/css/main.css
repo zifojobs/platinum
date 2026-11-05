@@ -1533,6 +1533,16 @@ body.intro-active { overflow: hidden; }
   color: var(--color-text-dark);
   margin: 0 0 18px;
 }
+/* Platinum feedback (04-05/11/2026, via Shabeeb/WhatsApp): article titles should not
+   be all-caps — sentence case, city/place names and the brand name keep their
+   capital. The text itself is written in that casing (not a CSS trick: capitalize
+   would cap every word, lowercase would also lowercase city names). Scoped to
+   blog titles only; the rest of the site keeps the uppercase Oswald styling by
+   design. */
+.article__title,
+.blog-card__title {
+  text-transform: none;
+}
 .article__lead {
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
